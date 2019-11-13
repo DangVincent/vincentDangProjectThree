@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Dice BlackJack</title>
 </head>
 <body>
-    
+    <!-- Header content starts here -->
+    <header>
+        <div class="wrapper">
+            <button class="instructionsMenuIcon"><span class="fas fa-bars"></span></button>
+            <div class="instructionsMenu">
+                <h2>Instructions</h2>
+                <p>Welcome to Dice BlackJack</p>
+                <ol>
+                    <li>
+                        <p>the objective is to reach 21 or get a higher score than your opponent.</p>
+                    </li>
+                    <li>
+                        <p>try not to go over 21 or you will bust and lose :(</p>
+                    </li>
+                    <li>
+                        <p>you will have two buttons to click on after the game has begun. one button will roll a new dice and the other will keep your current score.</p>
+                    </li>
+                    <li>
+                        <p>click the start button to begin.</p>
+                    </li>
+                    <li>
+                        <p>have fun!!! :)</p>
+                    </li>
+                </ol>
+            </div>
+            <h1>dice blackjack</h1>
+        </div>
+    </header>
+    <!-- Header content ends here -->
+    <!-- Main content starts here -->
+    <main>
+        <ul class="diceGrid" id="diceGrid">
+
+        </ul>
+        <form action="submit">
+            <button class="start">start</button>
+            <button class="rollNewDice">roll new dice</button>
+            <input type="submit" class="stay" value="stay">
+        </form>
+    </main>
+    <!-- Main content ends here -->
+    <!-- Footer content starts here -->
+    <footer>
+        <div class="wrapper">
+            <p>copyright © vincent dang 2019</p>
+        </div>
+    </footer>
+    <!-- Footer content ends here -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
