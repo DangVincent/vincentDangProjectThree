@@ -152,38 +152,75 @@ body {
   font-family: 'Space Mono', monospace;
   background: #47682C; }
 
-ul {
+ol {
   margin: 0;
   padding: 0; }
 
-li {
-  list-style-type: none; }
-
 .wrapper {
   max-width: 1280px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border: 1px solid tomato; }
 
 header .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start; }
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 20px; }
   header .wrapper .instructionsMenuIcon {
     display: block;
-    font-size: 1.4rem;
-    padding: 0;
-    border: none; }
-  header .wrapper .instructionsMenu {
-    display: none; }
+    font-size: 1.6rem;
+    padding: 0 5px;
+    border: none;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    background: none;
+    -webkit-transition: color 0.5s ease-out;
+    -o-transition: color 0.5s ease-out;
+    transition: color 0.5s ease-out;
+    z-index: 20; }
+  header .wrapper .fa-times {
+    color: #FFFFFF;
+    -webkit-transition: color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out; }
+  header .wrapper .fa-times:hover {
+    color: #690500; }
+  header .wrapper .instructionsMenuIcon:hover {
+    color: #FFFFFF; }
   header .wrapper h1 {
+    font-size: 2.3rem;
+    border: 1px solid tomato;
     text-align: center;
     text-transform: capitalize;
     margin: 0;
     -webkit-box-flex: 2;
     -ms-flex: 2 auto;
     flex: 2 auto; }
+
+header .instructionsMenu {
+  display: none;
+  color: #FFFFFF;
+  padding: 0 100px; }
+  header .instructionsMenu h2 {
+    text-align: center; }
+  header .instructionsMenu p:first-letter {
+    text-transform: capitalize; }
+  header .instructionsMenu .steps {
+    text-align: left; }
+
+header .showInstructionsMenu {
+  z-index: 10;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9); }
 
 footer {
   background: #452103;

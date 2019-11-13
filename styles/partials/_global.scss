@@ -5,14 +5,12 @@ body {
     font-family: 'Space Mono', monospace;
     background: $tertiaryColour;
 }
-ul {
+ol {
     margin: 0;
     padding: 0;
-}
-li {
-    list-style-type: none;
 }
 .wrapper {
     max-width: 1280px;
     margin: 0 auto;
+    border: 1px solid tomato;
 }
