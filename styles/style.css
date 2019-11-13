@@ -148,6 +148,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 html {
   font-size: 125%; }
 
+body {
+  font-family: 'Space Mono', monospace;
+  background: #47682C; }
+
 ul {
   margin: 0;
   padding: 0; }
@@ -158,3 +162,37 @@ li {
 .wrapper {
   max-width: 1280px;
   margin: 0 auto; }
+
+header .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+  header .wrapper .instructionsMenuIcon {
+    display: block;
+    font-size: 1.4rem;
+    padding: 0;
+    border: none; }
+  header .wrapper .instructionsMenu {
+    display: none; }
+  header .wrapper h1 {
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0;
+    -webkit-box-flex: 2;
+    -ms-flex: 2 auto;
+    flex: 2 auto; }
+
+footer {
+  background: #452103;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  footer p {
+    text-transform: capitalize;
+    text-align: center;
+    margin: 5px 0;
+    color: #FFFFFF; }

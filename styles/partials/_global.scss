@@ -1,6 +1,10 @@
 html {
     font-size: 125%
 }
+body {
+    font-family: 'Space Mono', monospace;
+    background: $tertiaryColour;
+}
 ul {
     margin: 0;
     padding: 0;

@@ -1,0 +1,22 @@
+header {
+    .wrapper {
+        display: flex;
+        align-items: flex-start;
+        .instructionsMenuIcon {
+            display: block;
+            font-size: 1.4rem;
+            padding: 0;
+            border: none;
+        }
+        .instructionsMenu {
+            display: none;
+        }
+        h1 {
+            text-align: center;
+            text-transform: capitalize;
+            margin: 0;
+            flex: 2 auto;
+        }
+    }
+    
+}
