@@ -1,6 +1,7 @@
+//
 const myDiceApp = {};
 
-myDiceApp.events = function() {
+myDiceApp.menuEvents = function() {
 
     const $instructionsMenuIcon = $('.instructionsMenuIcon');
     const $instructionsMenu = $('.instructionsMenu');
@@ -14,7 +15,7 @@ myDiceApp.events = function() {
 }
 
 myDiceApp.init = function() {
-    myDiceApp.events();
+    myDiceApp.menuEvents();
 }
 
 $(document).ready(function() {

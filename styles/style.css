@@ -152,9 +152,13 @@ body {
   font-family: 'Space Mono', monospace;
   background: #47682C; }
 
-ol {
+ol,
+ul {
   margin: 0;
   padding: 0; }
+
+ul li {
+  list-style-type: none; }
 
 .wrapper {
   max-width: 1280px;
@@ -204,12 +208,19 @@ header .wrapper {
 header .instructionsMenu {
   display: none;
   color: #FFFFFF;
-  padding: 0 100px; }
+  padding: 0 15%; }
   header .instructionsMenu h2 {
+    text-align: center;
+    font-size: 2.1rem; }
+  header .instructionsMenu p {
+    font-size: 1.1rem; }
+  header .instructionsMenu p:nth-of-type(1) {
     text-align: center; }
   header .instructionsMenu p:first-letter {
     text-transform: capitalize; }
   header .instructionsMenu .steps {
+    margin-top: 50px; }
+  header .instructionsMenu .steps p {
     text-align: left; }
 
 header .showInstructionsMenu {
@@ -222,6 +233,254 @@ header .showInstructionsMenu {
   right: 0;
   background: rgba(0, 0, 0, 0.9); }
 
+main .diceGrid {
+  margin: 100px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-rows: 70px;
+  grid-gap: 20px; }
+  main .diceGrid li {
+    -ms-grid-column: 2;
+    grid-column: 2; }
+
+main .dice {
+  border: 1px solid #070707;
+  border-radius: 10px;
+  background: #690500;
+  width: 120px;
+  height: 120px; }
+  @media (max-width: 920px) {
+    main .dice {
+      width: 100px;
+      height: 100px; } }
+
+main .diceFace1,
+main .diceFace2,
+main .diceFace3,
+main .diceFace4,
+main .diceFace5,
+main .diceFace6 {
+  position: relative; }
+
+main .dot1,
+main .dot2,
+main .dot3,
+main .dot4,
+main .dot5,
+main .dot6 {
+  background: #FFFFFF;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: absolute; }
+  @media (max-width: 920px) {
+    main .dot1,
+    main .dot2,
+    main .dot3,
+    main .dot4,
+    main .dot5,
+    main .dot6 {
+      width: 20px;
+      height: 20px; } }
+
+main .diceFace1 .dot1 {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  @media (max-width: 920px) {
+    main .diceFace1 .dot1 {
+      width: 20px;
+      height: 20px; } }
+
+main .diceFace2 .dot1 {
+  top: 15%;
+  left: 15%;
+  -webkit-transform: translate(-15%, -15%);
+  -ms-transform: translate(-15%, -15%);
+  transform: translate(-15%, -15%); }
+
+main .diceFace2 .dot2 {
+  bottom: 15%;
+  right: 15%;
+  -webkit-transform: translate(15%, 15%);
+  -ms-transform: translate(15%, 15%);
+  transform: translate(15%, 15%); }
+
+main .diceFace3 .dot1 {
+  top: 10%;
+  left: 10%;
+  -webkit-transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  transform: translate(-10%, -10%); }
+
+main .diceFace3 .dot2 {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+main .diceFace3 .dot3 {
+  right: 10%;
+  bottom: 10%;
+  -webkit-transform: translate(10%, 10%);
+  -ms-transform: translate(10%, 10%);
+  transform: translate(10%, 10%); }
+
+main .diceFace4 span:nth-child(odd) {
+  left: 10%; }
+
+main .diceFace4 span:nth-child(even) {
+  right: 10%; }
+
+main .diceFace4 .dot1,
+main .diceFace4 .dot2 {
+  top: 10%; }
+
+main .diceFace4 .dot1 {
+  -webkit-transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  transform: translate(-10%, -10%); }
+
+main .diceFace4 .dot2 {
+  -webkit-transform: translate(10%, -10%);
+  -ms-transform: translate(10%, -10%);
+  transform: translate(10%, -10%); }
+
+main .diceFace4 .dot3,
+main .diceFace4 .dot4 {
+  bottom: 10%; }
+
+main .diceFace4 .dot3 {
+  -webkit-transform: translate(-10%, 10%);
+  -ms-transform: translate(-10%, 10%);
+  transform: translate(-10%, 10%); }
+
+main .diceFace4 .dot4 {
+  -webkit-transform: translate(10%, 10%);
+  -ms-transform: translate(10%, 10%);
+  transform: translate(10%, 10%); }
+
+main .diceFace5 .dot1,
+main .diceFace5 .dot2 {
+  top: 10%; }
+
+main .diceFace5 .dot1 {
+  left: 10%;
+  -webkit-transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  transform: translate(-10%, -10%); }
+
+main .diceFace5 .dot2 {
+  right: 10%;
+  -webkit-transform: translate(10%, -10%);
+  -ms-transform: translate(10%, -10%);
+  transform: translate(10%, -10%); }
+
+main .diceFace5 .dot3 {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+main .diceFace5 .dot4,
+main .diceFace5 .dot5 {
+  bottom: 10%; }
+
+main .diceFace5 .dot4 {
+  left: 10%;
+  -webkit-transform: translate(-10%, 10%);
+  -ms-transform: translate(-10%, 10%);
+  transform: translate(-10%, 10%); }
+
+main .diceFace5 .dot5 {
+  right: 10%;
+  -webkit-transform: translate(10%, 10%);
+  -ms-transform: translate(10%, 10%);
+  transform: translate(10%, 10%); }
+
+main .diceFace6 span:nth-child(odd) {
+  left: 10%; }
+
+main .diceFace6 span:nth-child(even) {
+  right: 10%; }
+
+main .diceFace6 .dot1,
+main .diceFace6 .dot2 {
+  top: 10%; }
+
+main .diceFace6 .dot1 {
+  -webkit-transform: translate(-10%, -10%);
+  -ms-transform: translate(-10%, -10%);
+  transform: translate(-10%, -10%); }
+
+main .diceFace6 .dot2 {
+  -webkit-transform: translate(10%, -10%);
+  -ms-transform: translate(10%, -10%);
+  transform: translate(10%, -10%); }
+
+main .diceFace6 .dot3,
+main .diceFace6 .dot4 {
+  top: 50%; }
+
+main .diceFace6 .dot3 {
+  -webkit-transform: translate(-10%, -50%);
+  -ms-transform: translate(-10%, -50%);
+  transform: translate(-10%, -50%); }
+
+main .diceFace6 .dot4 {
+  -webkit-transform: translate(10%, -50%);
+  -ms-transform: translate(10%, -50%);
+  transform: translate(10%, -50%); }
+
+main .diceFace6 .dot5,
+main .diceFace6 .dot6 {
+  top: 90%; }
+
+main .diceFace6 .dot5 {
+  -webkit-transform: translate(-10%, -90%);
+  -ms-transform: translate(-10%, -90%);
+  transform: translate(-10%, -90%); }
+
+main .diceFace6 .dot6 {
+  -webkit-transform: translate(10%, -90%);
+  -ms-transform: translate(10%, -90%);
+  transform: translate(10%, -90%); }
+
+main .playButtons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 70px;
+  grid-gap: 20px; }
+  main .playButtons .rollNewDice,
+  main .playButtons .stay {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #171A21;
+    color: #FFFFFF;
+    border: none;
+    font-size: 1.2rem;
+    font-family: 'Wallpoet', cursive; }
+  main .playButtons .rollNewDice {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4 / span 3; }
+  main .playButtons .rollNewDice:hover {
+    color: #47682C; }
+  main .playButtons .stay {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 3;
+    grid-column: 7 / span 3; }
+  main .playButtons .stay:hover {
+    color: #690500; }
+
 footer {
   background: #452103;
   position: absolute;
@@ -230,6 +489,7 @@ footer {
   right: 0; }
   footer p {
     text-transform: capitalize;
+    font-size: 0.8rem;
     text-align: center;
     margin: 5px 0;
     color: #FFFFFF; }

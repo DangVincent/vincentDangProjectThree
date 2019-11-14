@@ -1,3 +1,4 @@
+// Global content styles starts here
 html {
     font-size: 125%
 }
@@ -5,12 +6,17 @@ body {
     font-family: 'Space Mono', monospace;
     background: $tertiaryColour;
 }
-ol {
+ol,
+ul {
     margin: 0;
     padding: 0;
+}
+ul li {
+    list-style-type: none;
 }
 .wrapper {
     max-width: 1280px;
     margin: 0 auto;
     border: 1px solid tomato;
 }
+// Global content styles ends here
