@@ -11,6 +11,9 @@ footer {
         text-align: center;
         margin: 5px 0;
         color: $accentColour;
+        @media (max-width: 520px) {
+            font-size: 0.7rem;
+        }
     }
 }
 // Footer content styles ends here

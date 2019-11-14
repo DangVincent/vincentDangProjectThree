@@ -1,7 +1,8 @@
 // Main content styles starts here
 main {
     .diceGrid {
-        margin: 100px 0;
+        min-height: 300px;
+        padding: 100px 0;
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         grid-auto-rows: 70px;
@@ -188,7 +189,6 @@ main {
         grid-template-columns: repeat(12, 1fr);
         grid-auto-rows: 70px;
         grid-gap: 20px;
-        
         .rollNewDice,
         .stay {
             text-transform: uppercase;
@@ -198,18 +198,53 @@ main {
             border: none;
             font-size: 1.2rem;
             font-family: 'Wallpoet', cursive;
+            transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in;
+            @media (max-width: 605px) {
+                font-size: 1rem;
+            }
+            &:hover {
+                box-shadow: 0 5px 5px $primaryColour;
+                text-shadow: 1px 1px 1px $accentColour;
+            }
         }
         .rollNewDice {
             grid-column: 4 / span 3;
-        }
-        .rollNewDice:hover {
-            color: $tertiaryColour;
+            @media (max-width: 1110px) {
+                grid-column: 3 / span 4;
+            }
+            @media (max-width: 826px) {
+                grid-column: 2 / span 5;
+            }
+            @media (max-width: 656px) {
+                grid-column: 2 / span 6;
+            }
+            @media (max-width: 470px) {
+                grid-column: 4 / span 6;
+            }
+            @media (max-width: 330px) {
+                grid-column: 3 / span 8;
+            }
+            &:hover {
+                color: $tertiaryColour;
+            }
         }
         .stay {
             grid-column: 7 / span 3;
-        }
-        .stay:hover {
-            color: $secondaryColour;
+            @media (max-width: 1110px) {
+                grid-column: 7 / span 4;
+            }
+            @media (max-width: 656px) {
+                grid-column: 8 / span 4;
+            }
+            @media (max-width: 470px) {
+                grid-column: 4 / span 6;
+            }
+            @media (max-width: 330px) {
+                grid-column: 3 / span 8;
+            }
+            &:hover {
+                color: $secondaryColour;
+            }
         }
     }
 }

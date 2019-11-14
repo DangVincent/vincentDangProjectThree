@@ -1,4 +1,4 @@
-//
+//scripts starts here
 const myDiceApp = {};
 
 myDiceApp.menuEvents = function() {
@@ -21,3 +21,4 @@ myDiceApp.init = function() {
 $(document).ready(function() {
     myDiceApp.init();
 });
+//scripts ends here

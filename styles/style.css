@@ -186,15 +186,22 @@ header .wrapper {
     -o-transition: color 0.5s ease-out;
     transition: color 0.5s ease-out;
     z-index: 20; }
+    header .wrapper .instructionsMenuIcon:hover {
+      color: #FFFFFF; }
   header .wrapper .fa-times {
     color: #FFFFFF;
     -webkit-transition: color 0.3s ease-out;
     -o-transition: color 0.3s ease-out;
-    transition: color 0.3s ease-out; }
-  header .wrapper .fa-times:hover {
-    color: #690500; }
-  header .wrapper .instructionsMenuIcon:hover {
-    color: #FFFFFF; }
+    transition: color 0.3s ease-out;
+    padding: 3px; }
+    header .wrapper .fa-times:hover {
+      color: #690500; }
+    @media (max-width: 1280px) {
+      header .wrapper .fa-times {
+        margin-right: 15px; } }
+    @media (max-width: 525px) {
+      header .wrapper .fa-times {
+        margin-right: 0; } }
   header .wrapper h1 {
     font-size: 2.3rem;
     border: 1px solid tomato;
@@ -204,6 +211,15 @@ header .wrapper {
     -webkit-box-flex: 2;
     -ms-flex: 2 auto;
     flex: 2 auto; }
+    @media (max-width: 605px) {
+      header .wrapper h1 {
+        font-size: 1.8rem; } }
+    @media (max-width: 520px) {
+      header .wrapper h1 {
+        font-size: 1.5rem; } }
+    @media (max-width: 350px) {
+      header .wrapper h1 {
+        font-size: 1.3rem; } }
 
 header .instructionsMenu {
   display: none;
@@ -212,16 +228,31 @@ header .instructionsMenu {
   header .instructionsMenu h2 {
     text-align: center;
     font-size: 2.1rem; }
-  header .instructionsMenu p {
-    font-size: 1.1rem; }
-  header .instructionsMenu p:nth-of-type(1) {
-    text-align: center; }
-  header .instructionsMenu p:first-letter {
-    text-transform: capitalize; }
+    @media (max-width: 605px) {
+      header .instructionsMenu h2 {
+        font-size: 1.8rem; } }
+    @media (max-width: 420px) {
+      header .instructionsMenu h2 {
+        font-size: 1.4rem; } }
   header .instructionsMenu .steps {
     margin-top: 50px; }
+    @media (max-width: 570px) {
+      header .instructionsMenu .steps {
+        margin-top: 25px; } }
   header .instructionsMenu .steps p {
-    text-align: left; }
+    text-align: left;
+    font-size: 1.1rem; }
+    @media (max-width: 690px) {
+      header .instructionsMenu .steps p {
+        font-size: 0.9rem; } }
+    @media (max-width: 420px) {
+      header .instructionsMenu .steps p {
+        font-size: 0.8rem; } }
+    @media (max-width: 330px) {
+      header .instructionsMenu .steps p {
+        font-size: 0.7rem; } }
+    header .instructionsMenu .steps p:first-letter {
+      text-transform: capitalize; }
 
 header .showInstructionsMenu {
   z-index: 10;
@@ -234,7 +265,8 @@ header .showInstructionsMenu {
   background: rgba(0, 0, 0, 0.9); }
 
 main .diceGrid {
-  margin: 100px 0;
+  min-height: 300px;
+  padding: 100px 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[10];
@@ -467,19 +499,78 @@ main .playButtons {
     color: #FFFFFF;
     border: none;
     font-size: 1.2rem;
-    font-family: 'Wallpoet', cursive; }
+    font-family: 'Wallpoet', cursive;
+    -webkit-transition: color 0.3s ease-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out;
+    transition: color 0.3s ease-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out;
+    -o-transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in;
+    transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in;
+    transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out; }
+    @media (max-width: 605px) {
+      main .playButtons .rollNewDice,
+      main .playButtons .stay {
+        font-size: 1rem; } }
+    main .playButtons .rollNewDice:hover,
+    main .playButtons .stay:hover {
+      -webkit-box-shadow: 0 5px 5px #070707;
+      box-shadow: 0 5px 5px #070707;
+      text-shadow: 1px 1px 1px #FFFFFF; }
   main .playButtons .rollNewDice {
     -ms-grid-column: 4;
     -ms-grid-column-span: 3;
     grid-column: 4 / span 3; }
-  main .playButtons .rollNewDice:hover {
-    color: #47682C; }
+    @media (max-width: 1110px) {
+      main .playButtons .rollNewDice {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 4;
+        grid-column: 3 / span 4; } }
+    @media (max-width: 826px) {
+      main .playButtons .rollNewDice {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 5;
+        grid-column: 2 / span 5; } }
+    @media (max-width: 656px) {
+      main .playButtons .rollNewDice {
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 6;
+        grid-column: 2 / span 6; } }
+    @media (max-width: 470px) {
+      main .playButtons .rollNewDice {
+        -ms-grid-column: 4;
+        -ms-grid-column-span: 6;
+        grid-column: 4 / span 6; } }
+    @media (max-width: 330px) {
+      main .playButtons .rollNewDice {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 8;
+        grid-column: 3 / span 8; } }
+    main .playButtons .rollNewDice:hover {
+      color: #47682C; }
   main .playButtons .stay {
     -ms-grid-column: 7;
     -ms-grid-column-span: 3;
     grid-column: 7 / span 3; }
-  main .playButtons .stay:hover {
-    color: #690500; }
+    @media (max-width: 1110px) {
+      main .playButtons .stay {
+        -ms-grid-column: 7;
+        -ms-grid-column-span: 4;
+        grid-column: 7 / span 4; } }
+    @media (max-width: 656px) {
+      main .playButtons .stay {
+        -ms-grid-column: 8;
+        -ms-grid-column-span: 4;
+        grid-column: 8 / span 4; } }
+    @media (max-width: 470px) {
+      main .playButtons .stay {
+        -ms-grid-column: 4;
+        -ms-grid-column-span: 6;
+        grid-column: 4 / span 6; } }
+    @media (max-width: 330px) {
+      main .playButtons .stay {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 8;
+        grid-column: 3 / span 8; } }
+    main .playButtons .stay:hover {
+      color: #690500; }
 
 footer {
   background: #452103;
@@ -493,3 +584,6 @@ footer {
     text-align: center;
     margin: 5px 0;
     color: #FFFFFF; }
+    @media (max-width: 520px) {
+      footer p {
+        font-size: 0.7rem; } }
