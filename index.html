@@ -15,8 +15,8 @@
     <header>
         <div class="wrapper">
             <h1>dice blackjack<span class="fas fa-dice"></span></h1>
-            <button class="instructionsMenuIcon"><i class="fas fa-bars"></i></button>
-            <div class="instructionsMenu">
+            <button class="instructionsMenuIcon" id="instructionsMenuIcon"><i class="fas fa-bars"></i></button>
+            <div class="instructionsMenu" id="instructionsMenu">
                 <h2>Instructions</h2>
                 <ol class="steps">
                     <li>
@@ -44,19 +44,10 @@
         <div class="wrapper">
             <ul class="diceGrid" id="diceGrid">
                 <!-- Dices get added dynamically here -->
-                <!-- <li>
-                    <div class="dice diceFace1">
-                        <span class="dot1"></span>
-                        <span class="dot2"></span>
-                        <span class="dot3"></span>
-                        <span class="dot4"></span>
-                        <span class="dot5"></span>
-                        <span class="dot6"></span>
-                    </div>
-                </li> -->
             </ul>
-            <form action="submit" class="playButtons">
-                <button class="rollNewDice">roll new dice</button>
+            <div class="userScoreIndicator" id="userScoreIndicator"></div>
+            <form action="submit" class="playButtons" id="playButtons">
+                <button class="rollNewDice" id="rollNewDice" type="button">roll new dice</button>
                 <input type="submit" class="stay" value="stay">
             </form>
         </div>
