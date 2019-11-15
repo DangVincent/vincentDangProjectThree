@@ -217,7 +217,7 @@ myDiceApp.init = function() {
 
 }
 
-$(document).ready(function() {
+$(function() {
     myDiceApp.init();
 });
 //scripts ends here
