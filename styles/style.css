@@ -163,9 +163,6 @@ ul li {
   max-width: 1280px;
   margin: 0 auto; }
 
-* {
-  border: 1px solid dodgerblue; }
-
 header {
   font-family: 'Space Mono', monospace; }
   header .wrapper {
@@ -266,14 +263,14 @@ header {
     background: rgba(0, 0, 0, 0.9); }
 
 main .diceGrid {
-  min-height: 280px;
+  min-height: 360px;
   padding: 50px 0;
   margin: 0 15%;
   display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, 125px);
   grid-auto-rows: 125px;
-  grid-gap: 15px; }
+  grid-gap: 3%; }
 
 main .dice {
   border: 1px solid #070707;
@@ -489,7 +486,7 @@ main .playButtons {
     letter-spacing: 2px;
     background: #171A21;
     color: #FFFFFF;
-    border: none;
+    border: 1px solid #070707;
     font-size: 1.2rem;
     font-family: 'Wallpoet', cursive;
     -webkit-transition: color 0.3s ease-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out;
@@ -505,7 +502,8 @@ main .playButtons {
     main .playButtons .stay:hover {
       -webkit-box-shadow: 0 5px 5px #070707;
       box-shadow: 0 5px 5px #070707;
-      text-shadow: 1px 1px 1px #FFFFFF; }
+      text-shadow: 1px 1px 1px #FFFFFF;
+      color: #690500; }
   main .playButtons .rollNewDice {
     -ms-grid-column: 4;
     -ms-grid-column-span: 3;
@@ -536,7 +534,7 @@ main .playButtons {
         -ms-grid-column-span: 8;
         grid-column: 3 / span 8; } }
     main .playButtons .rollNewDice:hover {
-      color: #47682C; }
+      cursor: url(../assets/diceCursor.png), auto; }
   main .playButtons .stay {
     -ms-grid-column: 7;
     -ms-grid-column-span: 3;
@@ -561,12 +559,11 @@ main .playButtons {
         -ms-grid-column: 3;
         -ms-grid-column-span: 8;
         grid-column: 3 / span 8; } }
-    main .playButtons .stay:hover {
-      color: #690500; }
 
 main .userScoreIndicator {
-  min-height: 75px; }
+  min-height: 80px; }
   main .userScoreIndicator p {
+    margin-top: 0;
     text-align: center;
     font-family: 'Space Mono', monospace;
     font-size: 1.2rem; }

@@ -1,6 +1,9 @@
 //scripts starts here
 const myDiceApp = {};
+
+const dicesRolled = [];
 let userTotalScore = 0;
+let computerTotalScore = 0;
 
 myDiceApp.menuEvents = function() {
     
@@ -22,30 +25,19 @@ myDiceApp.buttonEvents = function() {
 
     $rollNewDice.on('click', function(){
         if (userTotalScore === 21) {
-            alert('You win!');
+            myDiceApp.roundResult();
         }
         else if (userTotalScore < 21) {
             myDiceApp.rollDice();
         }
         else {
-            alert('You lost!');
+            myDiceApp.roundResult();
         }
     });
 
     $playButtons.on('submit', function(e){
         e.preventDefault();
-        if (userTotalScore === 21) {
-            alert('You are awesome');
-        }
-        else if (userTotalScore >= 17 && userTotalScore < 21) {
-            alert('Good job!');
-        }
-        else if (userTotalScore > 13 && userTotalScore < 17) {
-            alert(`It's alright, you tried`);
-        }
-        else {
-            alert('You lost! :(')
-        }
+        myDiceApp.roundResult();
     });  
 
 }
@@ -63,6 +55,7 @@ myDiceApp.rollDice = function() {
                             </div>
                           </li>`);
         userTotalScore = userTotalScore + 1;
+        dicesRolled.push(1);
         $userScoreIndicator.html(`<p>Your total score is ${userTotalScore}.</p>`);
     }
     else if (diceNum === 2) {
@@ -73,6 +66,7 @@ myDiceApp.rollDice = function() {
                             </div>
                           </li>`);
         userTotalScore = userTotalScore + 2;
+        dicesRolled.push(2);
         $userScoreIndicator.html(`<p>Your total score is ${userTotalScore}.</p>`);
     }
     else if (diceNum === 3) {
@@ -83,7 +77,8 @@ myDiceApp.rollDice = function() {
                                 <span class="dot3"></span>
                             </div>
                           </li>`);
-        userTotalScore = userTotalScore + 3;
+        userTotalScore = userTotalScore + 3
+        dicesRolled.push(3);;
         $userScoreIndicator.html(`<p>Your total score is ${userTotalScore}.</p>`);
     }
     else if (diceNum === 4) {
@@ -96,6 +91,7 @@ myDiceApp.rollDice = function() {
                             </div>
                           </li>`);
         userTotalScore = userTotalScore + 4;
+        dicesRolled.push(4);
         $userScoreIndicator.html(`<p>Your total score is ${userTotalScore}.</p>`);
     }
     else if (diceNum === 5) {
@@ -109,6 +105,7 @@ myDiceApp.rollDice = function() {
                             </div>
                           </li>`);
         userTotalScore = userTotalScore + 5;
+        dicesRolled.push(5);
         $userScoreIndicator.html(`<p>Your total score is ${userTotalScore}.</p>`);
     }
     else if (diceNum === 6) {
@@ -123,19 +120,101 @@ myDiceApp.rollDice = function() {
                             </div>
                           </li>`);
         userTotalScore = userTotalScore + 6;
+        dicesRolled.push(6);
         $userScoreIndicator.html(`<p>Your total score is ${userTotalScore}.</p>`);
     };
 }
 
 myDiceApp.randomNumGenerator = function() {
     const randomNum = Math.floor(Math.random() * 6) + 1;
-    
     return randomNum;
 }
 
+myDiceApp.computerScoreGenerator = function() {
+    
+}
+
+myDiceApp.roundResult = function() {
+
+    const userRolls = dicesRolled.join(' + ');
+    const victorySound = new Audio('../assets/victorySoundEffect.mp3');
+
+    if (userTotalScore === 21) {
+        victorySound.play();
+        Swal.fire({
+          title: 'Blackjack, You Won!!!',
+          imageUrl: '../assets/nice.gif',
+          imageWidth: 250,
+          imageHeight: 250,
+          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          showClass: {
+            popup: 'animated fadeInDown faster'
+          },
+          hideClass: {
+            popup: 'animated fadeOutUp faster'
+          }
+        });    
+    }
+    else if (userTotalScore > 21) {
+        Swal.fire({
+          title: 'Busted, You Lose!!!',
+          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          showClass: {
+            popup: 'animated fadeInDown faster'
+          },
+          hideClass: {
+            popup: 'animated fadeOutUp faster'
+          }
+        });
+    }
+    else if (userTotalScore >= 17 && userTotalScore < 21) {
+        Swal.fire({
+          title: 'Good job, You Won!!!',
+          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          showClass: {
+            popup: 'animated fadeInDown faster'
+          },
+          hideClass: {
+            popup: 'animated fadeOutUp faster'
+          }
+        });
+    }
+    else if (userTotalScore > 13 && userTotalScore < 17) {
+        Swal.fire({
+          title: 'You did great :)',
+          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          showClass: {
+            popup: 'animated fadeInDown faster'
+          },
+          hideClass: {
+            popup: 'animated fadeOutUp faster'
+          }
+        });
+    }
+    else {
+        Swal.fire({
+          title: 'Did you even try? :/!',
+          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          showClass: {
+            popup: 'animated fadeInDown faster'
+          },
+          hideClass: {
+            popup: 'animated fadeOutUp faster'
+          }
+        });
+    }
+
+}
+
+myDiceApp.finalScoreResult = function() {
+
+}
+
 myDiceApp.init = function() {
+    
     myDiceApp.menuEvents();
     myDiceApp.buttonEvents();
+
 }
 
 $(document).ready(function() {
