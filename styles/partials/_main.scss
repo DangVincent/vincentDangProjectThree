@@ -8,6 +8,10 @@ main {
         margin: 0 15%;
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         grid-template-rows: auto;
+        grid-gap: 2%;
+        @media (max-width: 592px) {
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        }
     }
 
     .dice {
@@ -21,9 +25,9 @@ main {
             width: 100px;
             height: 100px;
         }
-        @media (max-width: 480px) {
-            width: 90px;
-            height: 90px;
+        @media (max-width: 592px) {
+            width: 75px;
+            height: 75px;
         }
     }
     .dot1,
@@ -41,7 +45,7 @@ main {
             width: 20px;
             height: 20px;
         }
-        @media (max-width: 480px) {
+        @media (max-width: 592px) {
             width: 15px;
             height: 15px;
         }
@@ -186,6 +190,8 @@ main {
         grid-gap: 1%;
         @media (max-width: 470px) {
             grid-gap: 5%;
+            grid-auto-rows: 60px;
+            padding-bottom: 10px;
         }
         .rollNewDice,
         .stay {
@@ -200,10 +206,18 @@ main {
             @media (max-width: 605px) {
                 font-size: 1rem;
             }
+            @media (max-width: 470px) {
+                font-size: 0.9rem;
+            }
             &:hover {
                 box-shadow: 0 5px 5px $primaryColour;
                 text-shadow: 1px 1px 1px $accentColour;
                 color: $secondaryColour;
+                @media (max-width: 500px) {
+                    color: $accentColour;
+                    box-shadow: none;
+                    text-shadow: none;
+                }
             }
         }
         .rollNewDice {
@@ -220,11 +234,11 @@ main {
             @media (max-width: 470px) {
                 grid-column: 4 / span 6;
             }
-            @media (max-width: 338px) {
-                grid-column: 3 / span 8;
-            }
             &:hover {
                 cursor: url(../assets/diceCursor.png), auto;
+                @media (max-width: 500px) {
+                    cursor: pointer;
+                }
             }
         }
         .stay {
@@ -237,9 +251,6 @@ main {
             }
             @media (max-width: 470px) {
                 grid-column: 4 / span 6;
-            }
-            @media (max-width: 338px) {
-                grid-column: 3 / span 8;
             }
         }
     }

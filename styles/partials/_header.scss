@@ -1,10 +1,35 @@
 // Header content styles starts here
 header {
-    font-family: 'Space Mono', monospace;
     .wrapper {
         display: flex;
         align-items: center;
         padding-top: 20px;
+        h1 {
+            font-size: 2.3rem;
+            text-align: center;
+            text-transform: capitalize;
+            font-family:"wallpoet", cursive;
+            margin: 0;
+            flex: 2 auto;
+            @media (max-width: 605px) {
+                font-size: 1.8rem;
+            }
+            @media (max-width: 520px) {
+                font-size: 1.5rem;
+            }
+            @media (max-width: 355px) {
+                font-size: 1.3rem;
+            }
+        }
+        .fa-dice {
+            color: $secondaryColour;
+            animation: swing;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            @media (prefers-reduced-motion: reduce) {
+                animation: none;
+            }
+        }
         .instructionsMenuIcon {
             display: block;
             font-size: 1.6rem;
@@ -14,8 +39,18 @@ header {
             background: none;
             transition: color 0.5s ease-out;
             z-index: 20;
+            animation: pulse;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-delay: 5s;
+            @media (prefers-reduced-motion: reduce) {
+                animation: none;
+            }
             &:hover {
                 color: $accentColour;
+                @media (max-width: 500px) {
+                    color: initial;
+                }
             }
         }
         .fa-times {
@@ -24,28 +59,15 @@ header {
             padding: 3px;
             &:hover {
                 color: $secondaryColour;
+                @media (max-width: 500px) {
+                    color: $accentColour;
+                }
             }
             @media (max-width: 1280px) {
                 margin-right: 15px;
             }
             @media (max-width: 525px) {
                 margin-right: 0;
-            }
-        }
-        h1 {
-            font-size: 2.3rem;
-            text-align: center;
-            text-transform: capitalize;
-            margin: 0;
-            flex: 2 auto;
-            @media (max-width: 605px) {
-                font-size: 1.8rem;
-            }
-            @media (max-width: 520px) {
-                font-size: 1.5rem;
-            }
-            @media (max-width: 350px) {
-                font-size: 1.3rem;
             }
         }
     }

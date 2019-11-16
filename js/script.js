@@ -29,6 +29,7 @@ myDiceApp.buttonEvents = function() {
         }
         else if (userTotalScore < 21) {
             myDiceApp.rollDice();
+            myDiceApp.computerScoreGenerator();
         }
         else {
             myDiceApp.roundResult();
@@ -131,13 +132,21 @@ myDiceApp.randomNumGenerator = function() {
 }
 
 myDiceApp.computerScoreGenerator = function() {
-    
+    const computerDiceNum = this.randomNumGenerator();
+    if (computerTotalScore !== 21 || computerTotalScore > 21) {
+      computerTotalScore = computerTotalScore + computerDiceNum;
+    }
 }
 
 myDiceApp.roundResult = function() {
 
     const userRolls = dicesRolled.join(' + ');
     const victorySound = new Audio('../assets/victorySoundEffect.mp3');
+    const scores = `Your dice numbers: ${userRolls}
+    Your dice score: ${userTotalScore}
+    Computer dice score: ${computerTotalScore}`;
+    const showResultAnimation = 'animated fadeInDown faster';
+    const hideResultAnimation = 'animated fadeOutDown faster';
 
     if (userTotalScore === 21) {
         victorySound.play();
@@ -146,60 +155,60 @@ myDiceApp.roundResult = function() {
           imageUrl: '../assets/nice.gif',
           imageWidth: 250,
           imageHeight: 250,
-          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          text: `${scores}`,
           showClass: {
-            popup: 'animated fadeInDown faster'
+            popup: `${showResultAnimation}`
           },
           hideClass: {
-            popup: 'animated fadeOutUp faster'
+            popup: `${hideResultAnimation}`
           }
         });    
     }
     else if (userTotalScore > 21) {
         Swal.fire({
           title: 'Busted, You Lose!!!',
-          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          text: `${scores}`,
           showClass: {
-            popup: 'animated fadeInDown faster'
+            popup: `${showResultAnimation}`
           },
           hideClass: {
-            popup: 'animated fadeOutUp faster'
+            popup: `${hideResultAnimation}`
           }
         });
     }
     else if (userTotalScore >= 17 && userTotalScore < 21) {
         Swal.fire({
           title: 'Good job, You Won!!!',
-          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          text: `${scores}`,
           showClass: {
-            popup: 'animated fadeInDown faster'
+            popup: `${showResultAnimation}`
           },
           hideClass: {
-            popup: 'animated fadeOutUp faster'
+            popup: `${hideResultAnimation}`
           }
         });
     }
     else if (userTotalScore > 13 && userTotalScore < 17) {
         Swal.fire({
           title: 'You did great :)',
-          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          text: `${scores}`,
           showClass: {
-            popup: 'animated fadeInDown faster'
+            popup: `${showResultAnimation}`
           },
           hideClass: {
-            popup: 'animated fadeOutUp faster'
+            popup: `${hideResultAnimation}`
           }
         });
     }
     else {
         Swal.fire({
           title: 'Did you even try? :/!',
-          text: `Your dice score: ${userRolls} = ${userTotalScore}`,
+          text: `${scores}`,
           showClass: {
-            popup: 'animated fadeInDown faster'
+            popup: `${showResultAnimation}`
           },
           hideClass: {
-            popup: 'animated fadeOutUp faster'
+            popup: `${hideResultAnimation}`
           }
         });
     }
