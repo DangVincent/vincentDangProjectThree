@@ -9,6 +9,7 @@ main {
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         grid-template-rows: auto;
         grid-gap: 2%;
+        overflow: hidden;
         @media (max-width: 592px) {
             grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         }
@@ -21,6 +22,8 @@ main {
         width: 120px;
         height: 120px;
         position: relative;
+        animation: bounceInDown;
+        animation-duration: 0.7s;
         @media (max-width: 990px) {
             width: 100px;
             height: 100px;
@@ -194,7 +197,7 @@ main {
             padding-bottom: 10px;
         }
         .rollNewDice,
-        .stay {
+        .stand {
             text-transform: uppercase;
             letter-spacing: 2px;
             background: $quinaryColour;
@@ -209,7 +212,8 @@ main {
             @media (max-width: 470px) {
                 font-size: 0.9rem;
             }
-            &:hover {
+            &:hover,
+            &:focus {
                 box-shadow: 0 5px 5px $primaryColour;
                 text-shadow: 1px 1px 1px $accentColour;
                 color: $secondaryColour;
@@ -241,7 +245,7 @@ main {
                 }
             }
         }
-        .stay {
+        .stand {
             grid-column: 7 / span 3;
             @media (max-width: 1110px) {
                 grid-column: 7 / span 4;

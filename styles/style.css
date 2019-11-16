@@ -166,6 +166,33 @@ ul li {
   max-width: 1280px;
   margin: 0 auto; }
 
+.swal2-container {
+  font-family: 'Space Mono', monospace; }
+  .swal2-container .swal2-title {
+    margin-bottom: 5px;
+    color: #FFFFFF; }
+    @media (max-width: 690px) {
+      .swal2-container .swal2-title {
+        font-size: 1.5rem; } }
+  .swal2-container .swal2-popup {
+    background: #47682C;
+    border: 10px solid #49270c; }
+  .swal2-container .swal2-content p {
+    text-align: left;
+    margin: 5px 0;
+    color: #FFFFFF; }
+    @media (max-width: 690px) {
+      .swal2-container .swal2-content p {
+        font-size: 1rem; } }
+  .swal2-container .swal2-actions {
+    margin-top: 5px; }
+    .swal2-container .swal2-actions .swal2-confirm {
+      background-color: #171A21;
+      border: 1px solid #070707; }
+      @media (max-width: 690px) {
+        .swal2-container .swal2-actions .swal2-confirm {
+          font-size: 0.9rem; } }
+
 header .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -229,21 +256,21 @@ header .wrapper {
       header .wrapper .instructionsMenuIcon {
         -webkit-animation: none;
         animation: none; } }
-    header .wrapper .instructionsMenuIcon:hover {
-      color: #FFFFFF; }
+    header .wrapper .instructionsMenuIcon:hover, header .wrapper .instructionsMenuIcon:focus {
+      color: #690500; }
       @media (max-width: 500px) {
-        header .wrapper .instructionsMenuIcon:hover {
-          color: initial; } }
+        header .wrapper .instructionsMenuIcon:hover, header .wrapper .instructionsMenuIcon:focus {
+          color: #070707; } }
   header .wrapper .fa-times {
     color: #FFFFFF;
     -webkit-transition: color 0.3s ease-out;
     -o-transition: color 0.3s ease-out;
     transition: color 0.3s ease-out;
     padding: 3px; }
-    header .wrapper .fa-times:hover {
+    header .wrapper .fa-times:hover, header .wrapper .fa-times:focus {
       color: #690500; }
       @media (max-width: 500px) {
-        header .wrapper .fa-times:hover {
+        header .wrapper .fa-times:hover, header .wrapper .fa-times:focus {
           color: #FFFFFF; } }
     @media (max-width: 1280px) {
       header .wrapper .fa-times {
@@ -308,7 +335,8 @@ main .diceGrid {
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   -ms-grid-rows: auto;
   grid-template-rows: auto;
-  grid-gap: 2%; }
+  grid-gap: 2%;
+  overflow: hidden; }
   @media (max-width: 592px) {
     main .diceGrid {
       grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); } }
@@ -319,7 +347,11 @@ main .dice {
   background: #690500;
   width: 120px;
   height: 120px;
-  position: relative; }
+  position: relative;
+  -webkit-animation: bounceInDown;
+  animation: bounceInDown;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s; }
   @media (max-width: 990px) {
     main .dice {
       width: 100px;
@@ -535,7 +567,7 @@ main .playButtons {
       grid-auto-rows: 60px;
       padding-bottom: 10px; } }
   main .playButtons .rollNewDice,
-  main .playButtons .stay {
+  main .playButtons .stand {
     text-transform: uppercase;
     letter-spacing: 2px;
     background: #171A21;
@@ -550,21 +582,23 @@ main .playButtons {
     transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out; }
     @media (max-width: 605px) {
       main .playButtons .rollNewDice,
-      main .playButtons .stay {
+      main .playButtons .stand {
         font-size: 1rem; } }
     @media (max-width: 470px) {
       main .playButtons .rollNewDice,
-      main .playButtons .stay {
+      main .playButtons .stand {
         font-size: 0.9rem; } }
-    main .playButtons .rollNewDice:hover,
-    main .playButtons .stay:hover {
+    main .playButtons .rollNewDice:hover, main .playButtons .rollNewDice:focus,
+    main .playButtons .stand:hover,
+    main .playButtons .stand:focus {
       -webkit-box-shadow: 0 5px 5px #070707;
       box-shadow: 0 5px 5px #070707;
       text-shadow: 1px 1px 1px #FFFFFF;
       color: #690500; }
       @media (max-width: 500px) {
-        main .playButtons .rollNewDice:hover,
-        main .playButtons .stay:hover {
+        main .playButtons .rollNewDice:hover, main .playButtons .rollNewDice:focus,
+        main .playButtons .stand:hover,
+        main .playButtons .stand:focus {
           color: #FFFFFF;
           -webkit-box-shadow: none;
           box-shadow: none;
@@ -598,22 +632,22 @@ main .playButtons {
       @media (max-width: 500px) {
         main .playButtons .rollNewDice:hover {
           cursor: pointer; } }
-  main .playButtons .stay {
+  main .playButtons .stand {
     -ms-grid-column: 7;
     -ms-grid-column-span: 3;
     grid-column: 7 / span 3; }
     @media (max-width: 1110px) {
-      main .playButtons .stay {
+      main .playButtons .stand {
         -ms-grid-column: 7;
         -ms-grid-column-span: 4;
         grid-column: 7 / span 4; } }
     @media (max-width: 680px) {
-      main .playButtons .stay {
+      main .playButtons .stand {
         -ms-grid-column: 8;
         -ms-grid-column-span: 4;
         grid-column: 8 / span 4; } }
     @media (max-width: 470px) {
-      main .playButtons .stay {
+      main .playButtons .stand {
         -ms-grid-column: 4;
         -ms-grid-column-span: 6;
         grid-column: 4 / span 6; } }

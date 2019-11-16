@@ -46,10 +46,11 @@ header {
             @media (prefers-reduced-motion: reduce) {
                 animation: none;
             }
-            &:hover {
-                color: $accentColour;
+            &:hover,
+            &:focus {
+                color: $secondaryColour;
                 @media (max-width: 500px) {
-                    color: initial;
+                    color: $primaryColour;
                 }
             }
         }
@@ -57,7 +58,8 @@ header {
             color: $accentColour;
             transition: color 0.3s ease-out;
             padding: 3px;
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $secondaryColour;
                 @media (max-width: 500px) {
                     color: $accentColour;

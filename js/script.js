@@ -22,14 +22,18 @@ myDiceApp.buttonEvents = function() {
 
     const $playButtons = $('#playButtons');
     const $rollNewDice = $('#rollNewDice');
+    let roundOver = false;
 
     $rollNewDice.on('click', function(){
+        const diceRollSound = new Audio('../assets/diceRollSoundEffect.mp3');  
+
         if (userTotalScore === 21) {
             myDiceApp.roundResult();
         }
-        else if (userTotalScore < 21) {
+        else if (userTotalScore < 21 && roundOver === false) {
             myDiceApp.rollDice();
             myDiceApp.computerScoreGenerator();
+            diceRollSound.play();
         }
         else {
             myDiceApp.roundResult();
@@ -38,6 +42,7 @@ myDiceApp.buttonEvents = function() {
 
     $playButtons.on('submit', function(e){
         e.preventDefault();
+        roundOver = true;
         myDiceApp.roundResult();
     });  
 
@@ -133,7 +138,7 @@ myDiceApp.randomNumGenerator = function() {
 
 myDiceApp.computerScoreGenerator = function() {
     const computerDiceNum = this.randomNumGenerator();
-    if (computerTotalScore !== 21 || computerTotalScore > 21) {
+  if ((computerTotalScore < 21 || computerTotalScore !== 21) && userTotalScore < 21) {
       computerTotalScore = computerTotalScore + computerDiceNum;
     }
 }
@@ -142,20 +147,20 @@ myDiceApp.roundResult = function() {
 
     const userRolls = dicesRolled.join(' + ');
     const victorySound = new Audio('../assets/victorySoundEffect.mp3');
-    const scores = `Your dice numbers: ${userRolls}
-    Your dice score: ${userTotalScore}
-    Computer dice score: ${computerTotalScore}`;
+    const scores = `<p>Your dice numbers: ${userRolls}</p>
+    <p>Your dice score: ${userTotalScore}</p>
+    <p>Computer dice score: ${computerTotalScore}</p>`;
     const showResultAnimation = 'animated fadeInDown faster';
-    const hideResultAnimation = 'animated fadeOutDown faster';
+    const hideResultAnimation = 'animated fadeOutUp faster';
 
     if (userTotalScore === 21) {
         victorySound.play();
         Swal.fire({
-          title: 'Blackjack, You Won!!!',
+          title: 'Blackjack, You Win!!!',
           imageUrl: '../assets/nice.gif',
-          imageWidth: 250,
-          imageHeight: 250,
-          text: `${scores}`,
+          imageWidth: 150,
+          imageHeight: 150,
+          html: `${scores}`,
           showClass: {
             popup: `${showResultAnimation}`
           },
@@ -164,10 +169,22 @@ myDiceApp.roundResult = function() {
           }
         });    
     }
+    else if ((userTotalScore > computerTotalScore || computerTotalScore > 21) && userTotalScore < 21) {
+      Swal.fire({
+        title: 'You Win!!! :)',
+        html: `${scores}`,
+        showClass: {
+          popup: `${showResultAnimation}`
+        },
+        hideClass: {
+          popup: `${hideResultAnimation}`
+        }
+      });
+    }
     else if (userTotalScore > 21) {
         Swal.fire({
           title: 'Busted, You Lose!!!',
-          text: `${scores}`,
+          html: `${scores}`,
           showClass: {
             popup: `${showResultAnimation}`
           },
@@ -176,22 +193,10 @@ myDiceApp.roundResult = function() {
           }
         });
     }
-    else if (userTotalScore >= 17 && userTotalScore < 21) {
+    else if ((userTotalScore < computerTotalScore || userTotalScore === computerTotalScore) && (computerTotalScore < 21 && userTotalScore !== 0) || computerTotalScore === 21) {
         Swal.fire({
-          title: 'Good job, You Won!!!',
-          text: `${scores}`,
-          showClass: {
-            popup: `${showResultAnimation}`
-          },
-          hideClass: {
-            popup: `${hideResultAnimation}`
-          }
-        });
-    }
-    else if (userTotalScore > 13 && userTotalScore < 17) {
-        Swal.fire({
-          title: 'You did great :)',
-          text: `${scores}`,
+          title: 'Dealer Won, You Lose :(',
+          html: `${scores}`,
           showClass: {
             popup: `${showResultAnimation}`
           },
@@ -203,7 +208,7 @@ myDiceApp.roundResult = function() {
     else {
         Swal.fire({
           title: 'Did you even try? :/!',
-          text: `${scores}`,
+          html: `${scores}`,
           showClass: {
             popup: `${showResultAnimation}`
           },

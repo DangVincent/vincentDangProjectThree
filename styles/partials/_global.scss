@@ -23,4 +23,41 @@ ul li {
 * {
     // border: 1px solid dodgerblue;
 }
+//Sweet alert content styles starts here
+.swal2-container {
+    font-family: 'Space Mono', monospace;
+    .swal2-title {
+        margin-bottom: 5px;
+        color: $accentColour;
+        @media (max-width: 690px) {
+            font-size: 1.5rem;
+        }
+    }
+    .swal2-popup {
+        background: $tertiaryColour;
+        border: 10px solid $quaternaryColour;
+    }
+    .swal2-content {
+        p {
+            text-align: left;
+            margin: 5px 0;
+            color: $accentColour;
+            @media (max-width: 690px) {
+                font-size: 1rem;
+            }
+        }
+    }
+    .swal2-actions {
+        margin-top: 5px;
+        .swal2-confirm {
+            background-color: $quinaryColour;
+            border: 1px solid $primaryColour;
+            @media (max-width: 690px) {
+                font-size: 0.9rem;
+            }
+        }
+    }
+    
+}
+// Sweet Alert content ends here
 // Global content styles ends here
