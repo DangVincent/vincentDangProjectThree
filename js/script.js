@@ -1,4 +1,6 @@
-//scripts starts here
+//Scripts starts here
+
+//Global Variables
 const myDiceApp = {};
 const $diceGrid = $('#diceGrid');
 const dicesRolled = [];
@@ -6,6 +8,7 @@ let userTotalScore = 0;
 let computerTotalScore = 0;
 let roundOver = false;
 
+// Animates Start Screen Dices Function
 myDiceApp.startScreenDices = function() {
 
     const animateStartDice1 = function () {
@@ -107,6 +110,7 @@ myDiceApp.startScreenDices = function() {
     animateStartDice6();
 }
 
+// Controls the Instructions Menu Button Function
 myDiceApp.menuEvents = function() {
     
     const $instructionsMenuIcon = $('#instructionsMenuIcon');
@@ -127,6 +131,7 @@ myDiceApp.menuEvents = function() {
     });
 }
 
+// Controls the Play Buttons Function
 myDiceApp.buttonEvents = function() {
 
     const $start = $('#start');
@@ -165,6 +170,7 @@ myDiceApp.buttonEvents = function() {
 
 }
 
+// Controls the User's Dice roll Function
 myDiceApp.rollDice = function() {
     
     const diceNum = this.randomNumGenerator();
@@ -248,11 +254,13 @@ myDiceApp.rollDice = function() {
     };
 }
 
+// Generates a Random Number Function
 myDiceApp.randomNumGenerator = function() {
     const randomNum = Math.floor(Math.random() * 6) + 1;
     return randomNum;
 }
 
+// Controls the Dealer's Score Function
 myDiceApp.computerScoreGenerator = function() {
     const computerDiceNum = this.randomNumGenerator();
   if ((computerTotalScore < 21 || computerTotalScore !== 21) && userTotalScore < 21) {
@@ -260,6 +268,7 @@ myDiceApp.computerScoreGenerator = function() {
     }
 }
 
+// Determines the Score Results Function
 myDiceApp.roundResult = function() {
 
     const userRolls = dicesRolled.join('+');
@@ -366,6 +375,7 @@ myDiceApp.roundResult = function() {
     }
 }
 
+// Clears the Board for a New Round Function
 myDiceApp.newRound = function() {
 
     const $userScoreIndicator = $('#userScoreIndicator');
@@ -388,4 +398,4 @@ myDiceApp.init = function() {
 $(function() {
     myDiceApp.init();
 });
-//scripts ends here
+//Scripts ends here

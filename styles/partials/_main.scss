@@ -340,10 +340,10 @@ main {
     .showStartDiceFace3  { 
         transform: translateZ(-60px) rotateX(-90deg);
         @media (max-width: 1115px) {
-            transform: translateZ(-49px) rotateX(90deg);
+            transform: translateZ(-49px) rotateX(-90deg);
         }
         @media (max-width: 592px) {
-            transform: translateZ(-35px) rotateX(90deg);
+            transform: translateZ(-35px) rotateX(-90deg);
         } 
     }
     .showStartDiceFace4  { 

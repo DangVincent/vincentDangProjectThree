@@ -857,12 +857,12 @@ main .showStartDiceFace3 {
   transform: translateZ(-60px) rotateX(-90deg); }
   @media (max-width: 1115px) {
     main .showStartDiceFace3 {
-      -webkit-transform: translateZ(-49px) rotateX(90deg);
-      transform: translateZ(-49px) rotateX(90deg); } }
+      -webkit-transform: translateZ(-49px) rotateX(-90deg);
+      transform: translateZ(-49px) rotateX(-90deg); } }
   @media (max-width: 592px) {
     main .showStartDiceFace3 {
-      -webkit-transform: translateZ(-35px) rotateX(90deg);
-      transform: translateZ(-35px) rotateX(90deg); } }
+      -webkit-transform: translateZ(-35px) rotateX(-90deg);
+      transform: translateZ(-35px) rotateX(-90deg); } }
 
 main .showStartDiceFace4 {
   -webkit-transform: translateZ(-60px) rotateX(90deg);
