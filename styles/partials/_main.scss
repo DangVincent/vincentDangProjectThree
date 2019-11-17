@@ -1,20 +1,27 @@
 // Main content styles starts here
 main {
     .diceGrid {
-        min-height: 360px;
+        min-height: 300px;
         display: grid;
         justify-items: center;
         align-items: center;
         margin: 0 15%;
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         grid-template-rows: auto;
-        grid-gap: 2%;
         overflow: hidden;
+        @media (max-width: 990px) {
+            min-height: 270px;
+        }
+        @media (max-width: 742px) {
+            min-height: 400px;
+        }
         @media (max-width: 592px) {
             grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            grid-gap: 2%;
+            min-height: 280px;
         }
-        @media (max-width: 580px) {
-            min-height: 400px;
+        @media (max-width: 486px) {
+            min-height: 360px;
         }
     }
     .dice {
@@ -284,7 +291,7 @@ main {
         }
         .stand {
             grid-column: 7 / span 3;
-            @media (max-width: 1110px) {
+            @media (max-width: 1135px) {
                 grid-column: 7 / span 4;
             }
             @media (max-width: 680px) {
