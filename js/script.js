@@ -162,7 +162,7 @@ myDiceApp.computerScoreGenerator = function() {
 myDiceApp.roundResult = function() {
 
     const userRolls = dicesRolled.join('+');
-    const victorySound = new Audio('../assets/victorySoundEffect.mp3');
+    const victorySound = new Audio('/assets/victorySoundEffect.mp3');
     const scores = `<p>Your dice numbers: ${userRolls}</p>
     <p>Your dice score: ${userTotalScore}</p>
     <p>Computer dice score: ${computerTotalScore}</p>`;
