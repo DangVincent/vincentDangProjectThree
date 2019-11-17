@@ -159,8 +159,10 @@ ul {
 p {
   font-family: 'Space Mono', monospace; }
 
-ul li {
-  list-style-type: none; }
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
 
 .wrapper {
   max-width: 1280px;
@@ -348,7 +350,14 @@ header .showInstructionsMenu {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.9); }
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-animation: fadeInDown;
+  animation: fadeInDown;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+
+main .wrapper {
+  overflow: hidden; }
 
 main .diceGrid {
   min-height: 300px;
@@ -361,8 +370,7 @@ main .diceGrid {
   margin: 0 15%;
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   -ms-grid-rows: auto;
-  grid-template-rows: auto;
-  overflow: hidden; }
+  grid-template-rows: auto; }
   @media (max-width: 990px) {
     main .diceGrid {
       min-height: 270px; } }
@@ -377,10 +385,31 @@ main .diceGrid {
   @media (max-width: 486px) {
     main .diceGrid {
       min-height: 360px; } }
+  main .diceGrid .startScreenDice {
+    width: 125px;
+    height: 125px;
+    -webkit-animation: bounceInDown;
+    animation: bounceInDown;
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s; }
+  main .diceGrid .startScreenDice:nth-of-type(2) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s; }
+  main .diceGrid .startScreenDice:nth-of-type(3) {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s; }
+  main .diceGrid .startScreenDice:nth-of-type(4) {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s; }
+  main .diceGrid .startScreenDice:nth-of-type(5) {
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s; }
+  main .diceGrid .startScreenDice:nth-of-type(6) {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s; }
 
 main .dice {
   border: 1px solid #070707;
-  border-radius: 10px;
   background: #690500;
   width: 120px;
   height: 120px;
@@ -397,6 +426,25 @@ main .dice {
     main .dice {
       width: 75px;
       height: 75px; } }
+
+main .startDice {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateZ(-60px);
+  transform: translateZ(-60px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s; }
+
+main .diceFace {
+  width: 120px;
+  height: 120px;
+  position: absolute; }
 
 main .dot1,
 main .dot2,
@@ -428,199 +476,246 @@ main .dot6 {
       width: 15px;
       height: 15px; } }
 
-main .diceFace1 .dot1 {
+main .diceFace1 .dot1, main .startDiceFace1 .dot1 {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-main .diceFace2 .dot1 {
+main .diceFace2 .dot1, main .startDiceFace2 .dot1 {
   top: 15%;
   left: 15%;
   -webkit-transform: translate(-15%, -15%);
   -ms-transform: translate(-15%, -15%);
   transform: translate(-15%, -15%); }
 
-main .diceFace2 .dot2 {
+main .diceFace2 .dot2, main .startDiceFace2 .dot2 {
   bottom: 15%;
   right: 15%;
   -webkit-transform: translate(15%, 15%);
   -ms-transform: translate(15%, 15%);
   transform: translate(15%, 15%); }
 
-main .diceFace3 .dot1 {
+main .diceFace3 .dot1, main .startDiceFace3 .dot1 {
   top: 10%;
   left: 10%;
   -webkit-transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
   transform: translate(-10%, -10%); }
 
-main .diceFace3 .dot2 {
+main .diceFace3 .dot2, main .startDiceFace3 .dot2 {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-main .diceFace3 .dot3 {
+main .diceFace3 .dot3, main .startDiceFace3 .dot3 {
   right: 10%;
   bottom: 10%;
   -webkit-transform: translate(10%, 10%);
   -ms-transform: translate(10%, 10%);
   transform: translate(10%, 10%); }
 
-main .diceFace4 span:nth-child(odd) {
+main .diceFace4 span:nth-child(odd), main .startDiceFace4 span:nth-child(odd) {
   left: 10%; }
 
-main .diceFace4 span:nth-child(even) {
+main .diceFace4 span:nth-child(even), main .startDiceFace4 span:nth-child(even) {
   right: 10%; }
 
-main .diceFace4 .dot1,
-main .diceFace4 .dot2 {
+main .diceFace4 .dot1, main .startDiceFace4 .dot1,
+main .diceFace4 .dot2,
+main .startDiceFace4 .dot2 {
   top: 10%; }
 
-main .diceFace4 .dot1 {
+main .diceFace4 .dot1, main .startDiceFace4 .dot1 {
   -webkit-transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
   transform: translate(-10%, -10%); }
 
-main .diceFace4 .dot2 {
+
+main .diceFace4 .dot2,
+main .startDiceFace4 .dot2 {
   -webkit-transform: translate(10%, -10%);
   -ms-transform: translate(10%, -10%);
   transform: translate(10%, -10%); }
 
-main .diceFace4 .dot3,
-main .diceFace4 .dot4 {
+main .diceFace4 .dot3, main .startDiceFace4 .dot3,
+main .diceFace4 .dot4,
+main .startDiceFace4 .dot4 {
   bottom: 10%; }
 
-main .diceFace4 .dot3 {
+main .diceFace4 .dot3, main .startDiceFace4 .dot3 {
   -webkit-transform: translate(-10%, 10%);
   -ms-transform: translate(-10%, 10%);
   transform: translate(-10%, 10%); }
 
-main .diceFace4 .dot4 {
+
+main .diceFace4 .dot4,
+main .startDiceFace4 .dot4 {
   -webkit-transform: translate(10%, 10%);
   -ms-transform: translate(10%, 10%);
   transform: translate(10%, 10%); }
 
-main .diceFace5 .dot1,
-main .diceFace5 .dot2 {
+main .diceFace5 .dot1, main .startDiceFace5 .dot1,
+main .diceFace5 .dot2,
+main .startDiceFace5 .dot2 {
   top: 10%; }
 
-main .diceFace5 .dot1 {
+main .diceFace5 .dot1, main .startDiceFace5 .dot1 {
   left: 10%;
   -webkit-transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
   transform: translate(-10%, -10%); }
 
-main .diceFace5 .dot2 {
+
+main .diceFace5 .dot2,
+main .startDiceFace5 .dot2 {
   right: 10%;
   -webkit-transform: translate(10%, -10%);
   -ms-transform: translate(10%, -10%);
   transform: translate(10%, -10%); }
 
-main .diceFace5 .dot3 {
+main .diceFace5 .dot3, main .startDiceFace5 .dot3 {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-main .diceFace5 .dot4,
-main .diceFace5 .dot5 {
+main .diceFace5 .dot4, main .startDiceFace5 .dot4,
+main .diceFace5 .dot5,
+main .startDiceFace5 .dot5 {
   bottom: 10%; }
 
-main .diceFace5 .dot4 {
+main .diceFace5 .dot4, main .startDiceFace5 .dot4 {
   left: 10%;
   -webkit-transform: translate(-10%, 10%);
   -ms-transform: translate(-10%, 10%);
   transform: translate(-10%, 10%); }
 
-main .diceFace5 .dot5 {
+
+main .diceFace5 .dot5,
+main .startDiceFace5 .dot5 {
   right: 10%;
   -webkit-transform: translate(10%, 10%);
   -ms-transform: translate(10%, 10%);
   transform: translate(10%, 10%); }
 
-main .diceFace6 span:nth-child(odd) {
+main .diceFace6 span:nth-child(odd), main .startDiceFace6 span:nth-child(odd) {
   left: 10%; }
 
-main .diceFace6 span:nth-child(even) {
+main .diceFace6 span:nth-child(even), main .startDiceFace6 span:nth-child(even) {
   right: 10%; }
 
-main .diceFace6 .dot1,
-main .diceFace6 .dot2 {
+main .diceFace6 .dot1, main .startDiceFace6 .dot1,
+main .diceFace6 .dot2,
+main .startDiceFace6 .dot2 {
   top: 10%; }
 
-main .diceFace6 .dot1 {
+main .diceFace6 .dot1, main .startDiceFace6 .dot1 {
   -webkit-transform: translate(-10%, -10%);
   -ms-transform: translate(-10%, -10%);
   transform: translate(-10%, -10%); }
 
-main .diceFace6 .dot2 {
+
+main .diceFace6 .dot2,
+main .startDiceFace6 .dot2 {
   -webkit-transform: translate(10%, -10%);
   -ms-transform: translate(10%, -10%);
   transform: translate(10%, -10%); }
 
-main .diceFace6 .dot3,
-main .diceFace6 .dot4 {
+main .diceFace6 .dot3, main .startDiceFace6 .dot3,
+main .diceFace6 .dot4,
+main .startDiceFace6 .dot4 {
   top: 50%; }
 
-main .diceFace6 .dot3 {
+main .diceFace6 .dot3, main .startDiceFace6 .dot3 {
   -webkit-transform: translate(-10%, -50%);
   -ms-transform: translate(-10%, -50%);
   transform: translate(-10%, -50%); }
 
-main .diceFace6 .dot4 {
+
+main .diceFace6 .dot4,
+main .startDiceFace6 .dot4 {
   -webkit-transform: translate(10%, -50%);
   -ms-transform: translate(10%, -50%);
   transform: translate(10%, -50%); }
 
-main .diceFace6 .dot5,
-main .diceFace6 .dot6 {
+main .diceFace6 .dot5, main .startDiceFace6 .dot5,
+main .diceFace6 .dot6,
+main .startDiceFace6 .dot6 {
   top: 90%; }
 
-main .diceFace6 .dot5 {
+main .diceFace6 .dot5, main .startDiceFace6 .dot5 {
   -webkit-transform: translate(-10%, -90%);
   -ms-transform: translate(-10%, -90%);
   transform: translate(-10%, -90%); }
 
-main .diceFace6 .dot6 {
+
+main .diceFace6 .dot6,
+main .startDiceFace6 .dot6 {
   -webkit-transform: translate(10%, -90%);
   -ms-transform: translate(10%, -90%);
   transform: translate(10%, -90%); }
 
-main .startDice1,
-main .startDice2,
-main .startDice3,
-main .startDice4,
-main .startDice5,
-main .startDice6 {
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite; }
+main .startDiceFace1,
+main .startDiceFace2,
+main .startDiceFace3,
+main .startDiceFace4,
+main .startDiceFace5,
+main .startDiceFace6 {
+  border: 1px solid #070707;
+  background: #690500; }
 
-main .startDice2 {
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s; }
+main .startDiceFace1 {
+  -webkit-transform: rotateY(0deg) translateZ(60px);
+  transform: rotateY(0deg) translateZ(60px); }
 
-main .startDice3 {
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s; }
+main .startDiceFace2 {
+  -webkit-transform: rotateY(90deg) translateZ(60px);
+  transform: rotateY(90deg) translateZ(60px); }
 
-main .startDice4 {
-  -webkit-animation-delay: 0.6s;
-  animation-delay: 0.6s; }
+main .startDiceFace3 {
+  -webkit-transform: rotateX(90deg) translateZ(60px);
+  transform: rotateX(90deg) translateZ(60px); }
 
-main .startDice5 {
-  -webkit-animation-delay: 0.8s;
-  animation-delay: 0.8s; }
+main .startDiceFace4 {
+  -webkit-transform: rotateX(-90deg) translateZ(60px);
+  transform: rotateX(-90deg) translateZ(60px); }
 
-main .startDice6 {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s; }
+main .startDiceFace5 {
+  -webkit-transform: rotateY(-90deg) translateZ(60px);
+  transform: rotateY(-90deg) translateZ(60px); }
+
+main .startDiceFace6 {
+  -webkit-transform: rotateY(180deg) translateZ(60px);
+  transform: rotateY(180deg) translateZ(60px); }
+
+main .startDice.showDiceFace1 {
+  -webkit-transform: translateZ(-60px) rotateY(0deg);
+  transform: translateZ(-60px) rotateY(0deg); }
+
+main .startDice.showDiceFace2 {
+  -webkit-transform: translateZ(-60px) rotateY(-90deg);
+  transform: translateZ(-60px) rotateY(-90deg); }
+
+main .startDice.showDiceFace3 {
+  -webkit-transform: translateZ(-60px) rotateX(-90deg);
+  transform: translateZ(-60px) rotateX(-90deg); }
+
+main .startDice.showDiceFace4 {
+  -webkit-transform: translateZ(-60px) rotateX(90deg);
+  transform: translateZ(-60px) rotateX(90deg); }
+
+main .startDice.showDiceFace5 {
+  -webkit-transform: translateZ(-60px) rotateY(90deg);
+  transform: translateZ(-60px) rotateY(90deg); }
+
+main .startDice.showDiceFace6 {
+  -webkit-transform: translateZ(-60px) rotateY(-180deg);
+  transform: translateZ(-60px) rotateY(-180deg); }
 
 main .playButtons {
   display: -ms-grid;
@@ -644,11 +739,11 @@ main .playButtons {
     border: 1px solid #070707;
     font-size: 1.2rem;
     font-family: 'Wallpoet', cursive;
-    -webkit-transition: color 0.3s ease-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out;
-    transition: color 0.3s ease-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out;
-    -o-transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in;
-    transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in;
-    transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out; }
+    -webkit-transition: color 0.3s ease-out, text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out;
+    transition: color 0.3s ease-out, text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out;
+    -o-transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
+    transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
+    transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out; }
     @media (max-width: 605px) {
       main .playButtons .start,
       main .playButtons .rollNewDice,
@@ -666,7 +761,7 @@ main .playButtons {
     main .playButtons .stand:focus {
       -webkit-box-shadow: 0 5px 5px #070707;
       box-shadow: 0 5px 5px #070707;
-      text-shadow: 1px 1px 1px #FFFFFF;
+      text-shadow: 2px 2px 1px #070707;
       color: #690500; }
       @media (max-width: 500px) {
         main .playButtons .start:hover, main .playButtons .start:focus,
@@ -684,7 +779,13 @@ main .playButtons {
   main .playButtons .start {
     -ms-grid-column: 5;
     -ms-grid-column-span: 3;
-    grid-column: 5 / span 3; }
+    grid-column: 5 / span 3;
+    -webkit-animation: pulse;
+    animation: pulse;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; }
     @media (max-width: 605px) {
       main .playButtons .start {
         -ms-grid-column: 4;

@@ -1,5 +1,8 @@
 // Main content styles starts here
 main {
+    .wrapper {
+        overflow: hidden;
+    }
     .diceGrid {
         min-height: 300px;
         display: grid;
@@ -8,7 +11,6 @@ main {
         margin: 0 15%;
         grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         grid-template-rows: auto;
-        overflow: hidden;
         @media (max-width: 990px) {
             min-height: 270px;
         }
@@ -23,10 +25,30 @@ main {
         @media (max-width: 486px) {
             min-height: 360px;
         }
+        .startScreenDice {
+            width: 125px;
+            height: 125px;
+            animation: bounceInDown;
+            animation-duration: 5s;
+        }
+        .startScreenDice:nth-of-type(2) {
+            animation-delay: 0.2s;
+        }
+        .startScreenDice:nth-of-type(3) {
+            animation-delay: 0.4s;
+        }
+        .startScreenDice:nth-of-type(4) {
+            animation-delay: 0.6s;
+        }
+        .startScreenDice:nth-of-type(5) {
+            animation-delay: 0.8s;
+        }
+        .startScreenDice:nth-of-type(6) {
+            animation-delay: 1s;
+        }
     }
     .dice {
         border: 1px solid $primaryColour;
-        border-radius: 10px;
         background: $secondaryColour;
         width: 120px;
         height: 120px;
@@ -41,6 +63,19 @@ main {
             width: 75px;
             height: 75px;
         }
+    }
+    .startDice {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateZ(-60px); 
+        transform-style: preserve-3d;
+        transition: transform 1s;
+    }
+    .diceFace {
+        width: 120px;
+        height: 120px;
+        position: absolute;
     }
     .dot1,
     .dot2,
@@ -195,30 +230,47 @@ main {
             transform: translate(10%, -90%);
         }
     }
-    .startDice1,
-    .startDice2,
-    .startDice3,
-    .startDice4,
-    .startDice5,
-    .startDice6 {
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
+    .startDiceFace1,
+    .startDiceFace2,
+    .startDiceFace3,
+    .startDiceFace4,
+    .startDiceFace5,
+    .startDiceFace6 {
+        border: 1px solid $primaryColour;
+        background: $secondaryColour;
     }
-    .startDice2 {
-        animation-delay: 0.2s;
+    .startDiceFace1 {
+        @extend .diceFace1;
+        transform: rotateY(  0deg) translateZ(60px);
     }
-    .startDice3 {
-        animation-delay: 0.4s;
+    .startDiceFace2 {
+        @extend .diceFace2;
+        transform: rotateY( 90deg) translateZ(60px);
     }
-    .startDice4 {
-        animation-delay: 0.6s;
+    .startDiceFace3 {
+        @extend .diceFace3;
+        transform: rotateX( 90deg) translateZ(60px);
     }
-    .startDice5 {
-        animation-delay: 0.8s;
+    .startDiceFace4 {
+        @extend .diceFace4;
+        transform: rotateX(-90deg) translateZ(60px);
     }
-    .startDice6 {
-        animation-delay: 1s;
+    .startDiceFace5 {
+        @extend .diceFace5;
+        transform: rotateY(-90deg) translateZ(60px); 
     }
+    .startDiceFace6 {
+        @extend .diceFace6;
+        transform: rotateY(180deg) translateZ(60px);
+    }
+
+    .startDice.showDiceFace1  { transform: translateZ(-60px) rotateY(   0deg); }
+    .startDice.showDiceFace2  { transform: translateZ(-60px) rotateY( -90deg); }
+    .startDice.showDiceFace3  { transform: translateZ(-60px) rotateX( -90deg); }
+    .startDice.showDiceFace4  { transform: translateZ(-60px) rotateX(  90deg); }
+    .startDice.showDiceFace5  { transform: translateZ(-60px) rotateY(  90deg); }
+    .startDice.showDiceFace6  { transform: translateZ(-60px) rotateY(-180deg); }
+    
     .playButtons {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -239,7 +291,7 @@ main {
             border: 1px solid $primaryColour;
             font-size: 1.2rem;
             font-family: 'Wallpoet', cursive;
-            transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in;
+            transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
             @media (max-width: 605px) {
                 font-size: 1rem;
             }
@@ -249,7 +301,7 @@ main {
             &:hover,
             &:focus {
                 box-shadow: 0 5px 5px $primaryColour;
-                text-shadow: 1px 1px 1px $accentColour;
+                text-shadow: 2px 2px 1px $primaryColour;
                 color: $secondaryColour;
                 @media (max-width: 500px) {
                     color: $accentColour;
@@ -264,6 +316,9 @@ main {
         }
         .start {
             grid-column: 5 / span 3;
+            animation: pulse;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
             @media (max-width: 605px) {
                 grid-column: 4 / span 6;
             }

@@ -6,6 +6,107 @@ let userTotalScore = 0;
 let computerTotalScore = 0;
 let roundOver = false;
 
+myDiceApp.startScreenDices = function() {
+
+    const animateStartDice1 = function () {
+        
+        const $startDice1 = $('.startDice1');
+
+        setTimeout(function() {
+            $startDice1.addClass('showDiceFace6');
+            setTimeout(function() {
+                $startDice1.removeClass('showDiceFace6');
+            }, 2000);
+        }, 4000);
+    }
+    const animateStartDice2 = function () {
+
+        const $startDice2 = $('.startDice2');
+
+        setTimeout(function() {
+            $startDice2.addClass('showDiceFace2');
+            setTimeout(function() {
+                $startDice2.removeClass('showDiceFace2');
+            }, 2000);
+        }, 2000);
+        setTimeout(function() {
+            $startDice2.addClass('showDiceFace5');
+            setTimeout(function() {
+                $startDice2.removeClass('showDiceFace5');
+            }, 2000);
+        }, 4000);
+    }
+    const animateStartDice3 = function () {
+
+        const $startDice3 = $('.startDice3');
+
+        setTimeout(function() {
+            $startDice3.addClass('showDiceFace3');
+            setTimeout(function() {
+                $startDice3.removeClass('showDiceFace3');
+            }, 2000);
+        }, 2000);
+        setTimeout(function() {
+            $startDice3.addClass('showDiceFace4');
+            setTimeout(function() {
+                $startDice3.removeClass('showDiceFace4');
+            }, 2000);
+        }, 4000);
+    }
+    const animateStartDice4 = function () {
+
+        const $startDice4 = $('.startDice4');
+
+        setTimeout(function() {
+            $startDice4.addClass('showDiceFace4');
+            setTimeout(function() {
+                $startDice4.removeClass('showDiceFace4');
+            }, 2000);
+        }, 2000);
+        setTimeout(function() {
+            $startDice4.addClass('showDiceFace3');
+            setTimeout(function() {
+                $startDice4.removeClass('showDiceFace3');
+            }, 2000);
+        }, 4000);
+    }
+    const animateStartDice5 = function () {
+
+        const $startDice5 = $('.startDice5');
+
+        setTimeout(function() {
+            $startDice5.addClass('showDiceFace5');
+            setTimeout(function() {
+                $startDice5.removeClass('showDiceFace5');
+            }, 2000);
+        }, 2000);
+        setTimeout(function() {
+            $startDice5.addClass('showDiceFace2');
+            setTimeout(function() {
+                $startDice5.removeClass('showDiceFace2');
+            }, 2000);
+        }, 4000);
+    }
+    const animateStartDice6 = function () {
+
+        const $startDice6 = $('.startDice6');
+
+        setTimeout(function() {
+            $startDice6.addClass('showDiceFace6');
+            setTimeout(function() {
+                $startDice6.removeClass('showDiceFace6');
+            }, 2000);
+        }, 2000);
+    }
+
+    animateStartDice1();
+    animateStartDice2();
+    animateStartDice3();
+    animateStartDice4();
+    animateStartDice5();
+    animateStartDice6();
+}
+
 myDiceApp.menuEvents = function() {
     
     const $instructionsMenuIcon = $('#instructionsMenuIcon');
@@ -281,7 +382,7 @@ myDiceApp.init = function() {
     
     myDiceApp.menuEvents();
     myDiceApp.buttonEvents();
-
+    myDiceApp.startScreenDices();
 }
 
 $(function() {

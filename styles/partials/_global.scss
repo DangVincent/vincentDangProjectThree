@@ -13,8 +13,10 @@ ul {
 p {
     font-family: 'Space Mono', monospace;
 }
-ul li {
+li {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 .wrapper {
     max-width: 1280px;
