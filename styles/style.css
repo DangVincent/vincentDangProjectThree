@@ -159,7 +159,7 @@ ul {
 p {
   font-family: 'Space Mono', monospace; }
 
-li {
+ul li {
   list-style-type: none;
   padding: 0;
   margin: 0; }
@@ -185,6 +185,8 @@ li {
     @media (max-width: 690px) {
       .swal2-container .swal2-popup {
         padding: 10px; } }
+    .swal2-container .swal2-popup .swal2-image {
+      margin: 0 auto; }
   .swal2-container .swal2-content p {
     text-align: left;
     margin: 5px 0;
@@ -233,16 +235,16 @@ header .wrapper {
     -webkit-box-flex: 2;
     -ms-flex: 2 auto;
     flex: 2 auto; }
-    @media (max-width: 605px) {
+    @media (max-width: 675px) {
       header .wrapper h1 {
         font-size: 1.8rem; } }
     @media (max-width: 520px) {
       header .wrapper h1 {
         font-size: 1.5rem; } }
-    @media (max-width: 370px) {
+    @media (max-width: 420px) {
       header .wrapper h1 {
         font-size: 1.3rem; } }
-    @media (max-width: 330px) {
+    @media (max-width: 370px) {
       header .wrapper h1 {
         font-size: 1.1rem; } }
   header .wrapper .fa-dice {
@@ -262,13 +264,12 @@ header .wrapper {
     font-size: 1.6rem;
     padding: 0 5px;
     border: none;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
     background: none;
     -webkit-transition: color 0.5s ease-out;
     -o-transition: color 0.5s ease-out;
     transition: color 0.5s ease-out;
+    position: absolute;
+    right: 5%;
     z-index: 20;
     -webkit-animation: pulse;
     animation: pulse;
@@ -282,14 +283,19 @@ header .wrapper {
       header .wrapper .instructionsMenuIcon {
         -webkit-animation: none;
         animation: none; } }
-    @media (max-width: 330px) {
-      header .wrapper .instructionsMenuIcon {
-        font-size: 1.2rem; } }
     header .wrapper .instructionsMenuIcon:hover, header .wrapper .instructionsMenuIcon:focus {
       color: #690500; }
       @media (max-width: 500px) {
         header .wrapper .instructionsMenuIcon:hover, header .wrapper .instructionsMenuIcon:focus {
           color: #070707; } }
+  @media (max-width: 520px) {
+    header .wrapper .fa-bars {
+      font-size: 1.2rem;
+      right: 3%; } }
+  @media (max-width: 350px) {
+    header .wrapper .fa-bars {
+      font-size: 1rem;
+      right: 0; } }
   header .wrapper .fa-times {
     color: #FFFFFF;
     -webkit-transition: color 0.3s ease-out;
@@ -301,12 +307,6 @@ header .wrapper {
       @media (max-width: 500px) {
         header .wrapper .fa-times:hover, header .wrapper .fa-times:focus {
           color: #FFFFFF; } }
-    @media (max-width: 1280px) {
-      header .wrapper .fa-times {
-        margin-right: 15px; } }
-    @media (max-width: 525px) {
-      header .wrapper .fa-times {
-        margin-right: 0; } }
 
 header .instructionsMenu {
   display: none;
@@ -315,7 +315,7 @@ header .instructionsMenu {
   header .instructionsMenu h2 {
     text-align: center;
     font-size: 2.1rem; }
-    @media (max-width: 605px) {
+    @media (max-width: 675px) {
       header .instructionsMenu h2 {
         font-size: 1.8rem; } }
     @media (max-width: 420px) {
@@ -371,10 +371,7 @@ main .diceGrid {
   grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   -ms-grid-rows: auto;
   grid-template-rows: auto; }
-  @media (max-width: 990px) {
-    main .diceGrid {
-      min-height: 270px; } }
-  @media (max-width: 742px) {
+  @media (max-width: 1115px) {
     main .diceGrid {
       min-height: 400px; } }
   @media (max-width: 592px) {
@@ -385,6 +382,9 @@ main .diceGrid {
   @media (max-width: 486px) {
     main .diceGrid {
       min-height: 360px; } }
+  @media (max-width: 358px) {
+    main .diceGrid {
+      margin: 10px 0; } }
   main .diceGrid .startScreenDice {
     width: 125px;
     height: 125px;
@@ -392,6 +392,18 @@ main .diceGrid {
     animation: bounceInDown;
     -webkit-animation-duration: 5s;
     animation-duration: 5s; }
+    @media (prefers-reduced-motion: reduce) {
+      main .diceGrid .startScreenDice {
+        -webkit-animation: none;
+        animation: none; } }
+    @media (max-width: 1115px) {
+      main .diceGrid .startScreenDice {
+        width: 100px;
+        height: 100px; } }
+    @media (max-width: 592px) {
+      main .diceGrid .startScreenDice {
+        width: 75px;
+        height: 75px; } }
   main .diceGrid .startScreenDice:nth-of-type(2) {
     -webkit-animation-delay: 0.2s;
     animation-delay: 0.2s; }
@@ -418,6 +430,10 @@ main .dice {
   animation: bounceInDown;
   -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s; }
+  @media (prefers-reduced-motion: reduce) {
+    main .dice {
+      -webkit-animation: none;
+      animation: none; } }
   @media (max-width: 990px) {
     main .dice {
       width: 100px;
@@ -440,10 +456,18 @@ main .startDice {
   -o-transition: transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s; }
+  @media (max-width: 1115px) {
+    main .startDice {
+      -webkit-transform: translateZ(-49px);
+      transform: translateZ(-49px); } }
+  @media (max-width: 592px) {
+    main .startDice {
+      -webkit-transform: translateZ(-35px);
+      transform: translateZ(-35px); } }
 
 main .diceFace {
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   position: absolute; }
 
 main .dot1,
@@ -668,54 +692,228 @@ main .startDiceFace5,
 main .startDiceFace6 {
   border: 1px solid #070707;
   background: #690500; }
+  @media (max-width: 1115px) {
+    main .startDiceFace1 .dot1,
+    main .startDiceFace1 .dot2,
+    main .startDiceFace1 .dot3,
+    main .startDiceFace1 .dot4,
+    main .startDiceFace1 .dot5,
+    main .startDiceFace1 .dot6,
+    main .startDiceFace2 .dot1,
+    main .startDiceFace2 .dot2,
+    main .startDiceFace2 .dot3,
+    main .startDiceFace2 .dot4,
+    main .startDiceFace2 .dot5,
+    main .startDiceFace2 .dot6,
+    main .startDiceFace3 .dot1,
+    main .startDiceFace3 .dot2,
+    main .startDiceFace3 .dot3,
+    main .startDiceFace3 .dot4,
+    main .startDiceFace3 .dot5,
+    main .startDiceFace3 .dot6,
+    main .startDiceFace4 .dot1,
+    main .startDiceFace4 .dot2,
+    main .startDiceFace4 .dot3,
+    main .startDiceFace4 .dot4,
+    main .startDiceFace4 .dot5,
+    main .startDiceFace4 .dot6,
+    main .startDiceFace5 .dot1,
+    main .startDiceFace5 .dot2,
+    main .startDiceFace5 .dot3,
+    main .startDiceFace5 .dot4,
+    main .startDiceFace5 .dot5,
+    main .startDiceFace5 .dot6,
+    main .startDiceFace6 .dot1,
+    main .startDiceFace6 .dot2,
+    main .startDiceFace6 .dot3,
+    main .startDiceFace6 .dot4,
+    main .startDiceFace6 .dot5,
+    main .startDiceFace6 .dot6 {
+      width: 20px;
+      height: 20px; } }
+  @media (max-width: 592px) {
+    main .startDiceFace1 .dot1,
+    main .startDiceFace1 .dot2,
+    main .startDiceFace1 .dot3,
+    main .startDiceFace1 .dot4,
+    main .startDiceFace1 .dot5,
+    main .startDiceFace1 .dot6,
+    main .startDiceFace2 .dot1,
+    main .startDiceFace2 .dot2,
+    main .startDiceFace2 .dot3,
+    main .startDiceFace2 .dot4,
+    main .startDiceFace2 .dot5,
+    main .startDiceFace2 .dot6,
+    main .startDiceFace3 .dot1,
+    main .startDiceFace3 .dot2,
+    main .startDiceFace3 .dot3,
+    main .startDiceFace3 .dot4,
+    main .startDiceFace3 .dot5,
+    main .startDiceFace3 .dot6,
+    main .startDiceFace4 .dot1,
+    main .startDiceFace4 .dot2,
+    main .startDiceFace4 .dot3,
+    main .startDiceFace4 .dot4,
+    main .startDiceFace4 .dot5,
+    main .startDiceFace4 .dot6,
+    main .startDiceFace5 .dot1,
+    main .startDiceFace5 .dot2,
+    main .startDiceFace5 .dot3,
+    main .startDiceFace5 .dot4,
+    main .startDiceFace5 .dot5,
+    main .startDiceFace5 .dot6,
+    main .startDiceFace6 .dot1,
+    main .startDiceFace6 .dot2,
+    main .startDiceFace6 .dot3,
+    main .startDiceFace6 .dot4,
+    main .startDiceFace6 .dot5,
+    main .startDiceFace6 .dot6 {
+      width: 15px;
+      height: 15px; } }
 
 main .startDiceFace1 {
   -webkit-transform: rotateY(0deg) translateZ(60px);
   transform: rotateY(0deg) translateZ(60px); }
+  @media (max-width: 1115px) {
+    main .startDiceFace1 {
+      -webkit-transform: rotateY(0deg) translateZ(49px);
+      transform: rotateY(0deg) translateZ(49px); } }
+  @media (max-width: 592px) {
+    main .startDiceFace1 {
+      -webkit-transform: rotateY(0deg) translateZ(35px);
+      transform: rotateY(0deg) translateZ(35px); } }
 
 main .startDiceFace2 {
   -webkit-transform: rotateY(90deg) translateZ(60px);
   transform: rotateY(90deg) translateZ(60px); }
+  @media (max-width: 1115px) {
+    main .startDiceFace2 {
+      -webkit-transform: rotateY(90deg) translateZ(49px);
+      transform: rotateY(90deg) translateZ(49px); } }
+  @media (max-width: 592px) {
+    main .startDiceFace2 {
+      -webkit-transform: rotateY(90deg) translateZ(35px);
+      transform: rotateY(90deg) translateZ(35px); } }
 
 main .startDiceFace3 {
   -webkit-transform: rotateX(90deg) translateZ(60px);
   transform: rotateX(90deg) translateZ(60px); }
+  @media (max-width: 1115px) {
+    main .startDiceFace3 {
+      -webkit-transform: rotateX(90deg) translateZ(49px);
+      transform: rotateX(90deg) translateZ(49px); } }
+  @media (max-width: 592px) {
+    main .startDiceFace3 {
+      -webkit-transform: rotateX(90deg) translateZ(35px);
+      transform: rotateX(90deg) translateZ(35px); } }
 
 main .startDiceFace4 {
   -webkit-transform: rotateX(-90deg) translateZ(60px);
   transform: rotateX(-90deg) translateZ(60px); }
+  @media (max-width: 1115px) {
+    main .startDiceFace4 {
+      -webkit-transform: rotateX(-90deg) translateZ(49px);
+      transform: rotateX(-90deg) translateZ(49px); } }
+  @media (max-width: 592px) {
+    main .startDiceFace4 {
+      -webkit-transform: rotateX(-90deg) translateZ(35px);
+      transform: rotateX(-90deg) translateZ(35px); } }
 
 main .startDiceFace5 {
   -webkit-transform: rotateY(-90deg) translateZ(60px);
   transform: rotateY(-90deg) translateZ(60px); }
+  @media (max-width: 1115px) {
+    main .startDiceFace5 {
+      -webkit-transform: rotateY(-90deg) translateZ(49px);
+      transform: rotateY(-90deg) translateZ(49px); } }
+  @media (max-width: 592px) {
+    main .startDiceFace5 {
+      -webkit-transform: rotateY(-90deg) translateZ(35px);
+      transform: rotateY(-90deg) translateZ(35px); } }
 
 main .startDiceFace6 {
   -webkit-transform: rotateY(180deg) translateZ(60px);
   transform: rotateY(180deg) translateZ(60px); }
+  @media (max-width: 1115px) {
+    main .startDiceFace6 {
+      -webkit-transform: rotateY(180deg) translateZ(49px);
+      transform: rotateY(180deg) translateZ(49px); } }
+  @media (max-width: 592px) {
+    main .startDiceFace6 {
+      -webkit-transform: rotateY(180deg) translateZ(35px);
+      transform: rotateY(180deg) translateZ(35px); } }
 
-main .startDice.showDiceFace1 {
+main .showStartDiceFace1 {
   -webkit-transform: translateZ(-60px) rotateY(0deg);
   transform: translateZ(-60px) rotateY(0deg); }
+  @media (max-width: 1115px) {
+    main .showStartDiceFace1 {
+      -webkit-transform: translateZ(-49px) rotateY(0deg);
+      transform: translateZ(-49px) rotateY(0deg); } }
+  @media (max-width: 592px) {
+    main .showStartDiceFace1 {
+      -webkit-transform: translateZ(-35px) rotateY(0deg);
+      transform: translateZ(-35px) rotateY(0deg); } }
 
-main .startDice.showDiceFace2 {
+main .showStartDiceFace2 {
   -webkit-transform: translateZ(-60px) rotateY(-90deg);
   transform: translateZ(-60px) rotateY(-90deg); }
+  @media (max-width: 1115px) {
+    main .showStartDiceFace2 {
+      -webkit-transform: translateZ(-49px) rotateY(-90deg);
+      transform: translateZ(-49px) rotateY(-90deg); } }
+  @media (max-width: 592px) {
+    main .showStartDiceFace2 {
+      -webkit-transform: translateZ(-35px) rotateY(-90deg);
+      transform: translateZ(-35px) rotateY(-90deg); } }
 
-main .startDice.showDiceFace3 {
+main .showStartDiceFace3 {
   -webkit-transform: translateZ(-60px) rotateX(-90deg);
   transform: translateZ(-60px) rotateX(-90deg); }
+  @media (max-width: 1115px) {
+    main .showStartDiceFace3 {
+      -webkit-transform: translateZ(-49px) rotateX(90deg);
+      transform: translateZ(-49px) rotateX(90deg); } }
+  @media (max-width: 592px) {
+    main .showStartDiceFace3 {
+      -webkit-transform: translateZ(-35px) rotateX(90deg);
+      transform: translateZ(-35px) rotateX(90deg); } }
 
-main .startDice.showDiceFace4 {
+main .showStartDiceFace4 {
   -webkit-transform: translateZ(-60px) rotateX(90deg);
   transform: translateZ(-60px) rotateX(90deg); }
+  @media (max-width: 1115px) {
+    main .showStartDiceFace4 {
+      -webkit-transform: translateZ(-49px) rotateX(90deg);
+      transform: translateZ(-49px) rotateX(90deg); } }
+  @media (max-width: 592px) {
+    main .showStartDiceFace4 {
+      -webkit-transform: translateZ(-35px) rotateX(90deg);
+      transform: translateZ(-35px) rotateX(90deg); } }
 
-main .startDice.showDiceFace5 {
+main .showStartDiceFace5 {
   -webkit-transform: translateZ(-60px) rotateY(90deg);
   transform: translateZ(-60px) rotateY(90deg); }
+  @media (max-width: 1115px) {
+    main .showStartDiceFace5 {
+      -webkit-transform: translateZ(-49px) rotateY(90deg);
+      transform: translateZ(-49px) rotateY(90deg); } }
+  @media (max-width: 592px) {
+    main .showStartDiceFace5 {
+      -webkit-transform: translateZ(-35px) rotateY(90deg);
+      transform: translateZ(-35px) rotateY(90deg); } }
 
-main .startDice.showDiceFace6 {
+main .showStartDiceFace6 {
   -webkit-transform: translateZ(-60px) rotateY(-180deg);
   transform: translateZ(-60px) rotateY(-180deg); }
+  @media (max-width: 1115px) {
+    main .showStartDiceFace6 {
+      -webkit-transform: translateZ(-49px) rotateY(-180deg);
+      transform: translateZ(-49px) rotateY(-180deg); } }
+  @media (max-width: 592px) {
+    main .showStartDiceFace6 {
+      -webkit-transform: translateZ(-35px) rotateY(-180deg);
+      transform: translateZ(-35px) rotateY(-180deg); } }
 
 main .playButtons {
   display: -ms-grid;
@@ -778,14 +976,18 @@ main .playButtons {
     display: none; }
   main .playButtons .start {
     -ms-grid-column: 5;
-    -ms-grid-column-span: 3;
-    grid-column: 5 / span 3;
+    -ms-grid-column-span: 4;
+    grid-column: 5 / span 4;
     -webkit-animation: pulse;
     animation: pulse;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      main .playButtons .start {
+        -webkit-animation: none;
+        animation: none; } }
     @media (max-width: 605px) {
       main .playButtons .start {
         -ms-grid-column: 4;

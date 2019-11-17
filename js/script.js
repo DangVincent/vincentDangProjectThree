@@ -13,9 +13,9 @@ myDiceApp.startScreenDices = function() {
         const $startDice1 = $('.startDice1');
 
         setTimeout(function() {
-            $startDice1.addClass('showDiceFace6');
+            $startDice1.addClass('showStartDiceFace6');
             setTimeout(function() {
-                $startDice1.removeClass('showDiceFace6');
+                $startDice1.removeClass('showStartDiceFace6');
             }, 2000);
         }, 4000);
     }
@@ -24,15 +24,15 @@ myDiceApp.startScreenDices = function() {
         const $startDice2 = $('.startDice2');
 
         setTimeout(function() {
-            $startDice2.addClass('showDiceFace2');
+            $startDice2.addClass('showStartDiceFace2');
             setTimeout(function() {
-                $startDice2.removeClass('showDiceFace2');
+                $startDice2.removeClass('showStartDiceFace2');
             }, 2000);
         }, 2000);
         setTimeout(function() {
-            $startDice2.addClass('showDiceFace5');
+            $startDice2.addClass('showStartDiceFace5');
             setTimeout(function() {
-                $startDice2.removeClass('showDiceFace5');
+                $startDice2.removeClass('showStartDiceFace5');
             }, 2000);
         }, 4000);
     }
@@ -41,15 +41,15 @@ myDiceApp.startScreenDices = function() {
         const $startDice3 = $('.startDice3');
 
         setTimeout(function() {
-            $startDice3.addClass('showDiceFace3');
+            $startDice3.addClass('showStartDiceFace3');
             setTimeout(function() {
-                $startDice3.removeClass('showDiceFace3');
+                $startDice3.removeClass('showStartDiceFace3');
             }, 2000);
         }, 2000);
         setTimeout(function() {
-            $startDice3.addClass('showDiceFace4');
+            $startDice3.addClass('showStartDiceFace4');
             setTimeout(function() {
-                $startDice3.removeClass('showDiceFace4');
+                $startDice3.removeClass('showStartDiceFace4');
             }, 2000);
         }, 4000);
     }
@@ -58,15 +58,15 @@ myDiceApp.startScreenDices = function() {
         const $startDice4 = $('.startDice4');
 
         setTimeout(function() {
-            $startDice4.addClass('showDiceFace4');
+            $startDice4.addClass('showStartDiceFace4');
             setTimeout(function() {
-                $startDice4.removeClass('showDiceFace4');
+                $startDice4.removeClass('showStartDiceFace4');
             }, 2000);
         }, 2000);
         setTimeout(function() {
-            $startDice4.addClass('showDiceFace3');
+            $startDice4.addClass('showStartDiceFace3');
             setTimeout(function() {
-                $startDice4.removeClass('showDiceFace3');
+                $startDice4.removeClass('showStartDiceFace3');
             }, 2000);
         }, 4000);
     }
@@ -75,15 +75,15 @@ myDiceApp.startScreenDices = function() {
         const $startDice5 = $('.startDice5');
 
         setTimeout(function() {
-            $startDice5.addClass('showDiceFace5');
+            $startDice5.addClass('showStartDiceFace5');
             setTimeout(function() {
-                $startDice5.removeClass('showDiceFace5');
+                $startDice5.removeClass('showStartDiceFace5');
             }, 2000);
         }, 2000);
         setTimeout(function() {
-            $startDice5.addClass('showDiceFace2');
+            $startDice5.addClass('showStartDiceFace2');
             setTimeout(function() {
-                $startDice5.removeClass('showDiceFace2');
+                $startDice5.removeClass('showStartDiceFace2');
             }, 2000);
         }, 4000);
     }
@@ -92,9 +92,9 @@ myDiceApp.startScreenDices = function() {
         const $startDice6 = $('.startDice6');
 
         setTimeout(function() {
-            $startDice6.addClass('showDiceFace6');
+            $startDice6.addClass('showStartDiceFace6');
             setTimeout(function() {
-                $startDice6.removeClass('showDiceFace6');
+                $startDice6.removeClass('showStartDiceFace6');
             }, 2000);
         }, 2000);
     }
