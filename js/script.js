@@ -173,7 +173,7 @@ myDiceApp.roundResult = function() {
         victorySound.play();
         Swal.fire({
             title: 'Blackjack, You Win!!!',
-            imageUrl: '../assets/nice.gif',
+            imageUrl: '/assets/nice.gif',
             imageWidth: 200,
             imageHeight: 200,
             html: `${scores}`,
