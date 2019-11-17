@@ -41,7 +41,7 @@ myDiceApp.buttonEvents = function() {
     }); 
 
     $rollNewDice.on('click', function(){
-        const diceRollSound = new Audio('../assets/diceRollSoundEffect.mp3');  
+        const diceRollSound = new Audio('/../assets/diceRollSoundEffect.mp3');  
 
         if (userTotalScore === 21) {
             myDiceApp.roundResult();
@@ -162,7 +162,7 @@ myDiceApp.computerScoreGenerator = function() {
 myDiceApp.roundResult = function() {
 
     const userRolls = dicesRolled.join('+');
-    const victorySound = new Audio('/assets/victorySoundEffect.mp3');
+    const victorySound = new Audio('/../assets/victorySoundEffect.mp3');
     const scores = `<p>Your dice numbers: ${userRolls}</p>
     <p>Your dice score: ${userTotalScore}</p>
     <p>Computer dice score: ${computerTotalScore}</p>`;
@@ -173,7 +173,7 @@ myDiceApp.roundResult = function() {
         victorySound.play();
         Swal.fire({
             title: 'Blackjack, You Win!!!',
-            imageUrl: '/assets/nice.gif',
+            imageUrl: '/../assets/nice.gif',
             imageWidth: 200,
             imageHeight: 200,
             html: `${scores}`,
