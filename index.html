@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Animated favicon obtained from https://www.favicon.cc/?action=icon&file_id=112286 -->
+    <link rel="shortcut icon" href="/assets/staticDiceFavicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/animatedDiceFavicon.ico" type="image/x-icon">
     <!-- Animate.css obtained from https://github.com/daneden/animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono|Wallpoet&display=swap" rel="stylesheet">
@@ -16,8 +19,8 @@
     <!-- Header content starts here -->
     <header>
         <div class="wrapper">
-            <h1>dice blackjack <span class="fas fa-dice"></span></h1>
-            <button class="instructionsMenuIcon" id="instructionsMenuIcon"><i class="fas fa-bars"></i></button>
+            <h1>dice blackjack <span class="fas fa-dice" aria-hidden="true" aria-label="diceIcon"></span></h1>
+            <button class="instructionsMenuIcon" id="instructionsMenuIcon" aria-label="instructionsMenu" aria-expanded="false"><i class="fas fa-bars"></i></button>
             <div class="instructionsMenu" id="instructionsMenu">
                 <h2>Instructions</h2>
                 <ol class="steps">
@@ -46,11 +49,57 @@
         <div class="wrapper">
             <ul class="diceGrid" id="diceGrid">
                 <!-- Dices get added dynamically here -->
+                <li>
+                  <div class="dice diceFace1 startDice1">
+                      <span class="dot1"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="dice diceFace2 startDice2">
+                      <span class="dot1"></span>
+                      <span class="dot2"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="dice diceFace3 startDice3">
+                      <span class="dot1"></span>
+                      <span class="dot2"></span>
+                      <span class="dot3"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="dice diceFace4 startDice4">
+                      <span class="dot1"></span>
+                      <span class="dot2"></span>
+                      <span class="dot3"></span>
+                      <span class="dot4"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="dice diceFace5 startDice5">
+                      <span class="dot1"></span>
+                      <span class="dot2"></span>
+                      <span class="dot3"></span>
+                      <span class="dot4"></span>
+                      <span class="dot5"></span>
+                  </div>
+                </li>
+                <li>
+                  <div class="dice diceFace6 startDice6">
+                      <span class="dot1"></span>
+                      <span class="dot2"></span>
+                      <span class="dot3"></span>
+                      <span class="dot4"></span>
+                      <span class="dot5"></span>
+                      <span class="dot6"></span>
+                  </div>
+                </li>
             </ul>
             <div class="userScoreIndicator" id="userScoreIndicator"></div>
             <form action="submit" class="playButtons" id="playButtons">
+                <button class="start" id="start" type="button">start</button>
                 <button class="rollNewDice" id="rollNewDice" type="button">roll new dice</button>
-                <input type="submit" class="stand" value="stand">
+                <input type="submit" class="stand" value="stand" id="stand">
             </form>
         </div>
     </main>

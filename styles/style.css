@@ -149,7 +149,7 @@ html {
   font-size: 125%; }
 
 body {
-  background: #47682C; }
+  background: #447020; }
 
 ol,
 ul {
@@ -174,9 +174,15 @@ ul li {
     @media (max-width: 690px) {
       .swal2-container .swal2-title {
         font-size: 1.5rem; } }
+    @media (max-width: 465px) {
+      .swal2-container .swal2-title {
+        font-size: 1.3rem; } }
   .swal2-container .swal2-popup {
-    background: #47682C;
+    background: #447020;
     border: 10px solid #49270c; }
+    @media (max-width: 690px) {
+      .swal2-container .swal2-popup {
+        padding: 10px; } }
   .swal2-container .swal2-content p {
     text-align: left;
     margin: 5px 0;
@@ -184,14 +190,29 @@ ul li {
     @media (max-width: 690px) {
       .swal2-container .swal2-content p {
         font-size: 1rem; } }
+    @media (max-width: 470px) {
+      .swal2-container .swal2-content p {
+        font-size: 0.8rem; } }
   .swal2-container .swal2-actions {
     margin-top: 5px; }
-    .swal2-container .swal2-actions .swal2-confirm {
+    .swal2-container .swal2-actions button {
+      font-family: 'Wallpoet', cursive;
       background-color: #171A21;
       border: 1px solid #070707; }
       @media (max-width: 690px) {
-        .swal2-container .swal2-actions .swal2-confirm {
+        .swal2-container .swal2-actions button {
           font-size: 0.9rem; } }
+      .swal2-container .swal2-actions button:hover, .swal2-container .swal2-actions button:focus {
+        -webkit-box-shadow: 0 5px 5px #070707;
+        box-shadow: 0 5px 5px #070707;
+        text-shadow: 1px 1px 1px #FFFFFF;
+        color: #690500; }
+        @media (max-width: 500px) {
+          .swal2-container .swal2-actions button:hover, .swal2-container .swal2-actions button:focus {
+            color: #FFFFFF;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            text-shadow: none; } }
 
 header .wrapper {
   display: -webkit-box;
@@ -205,7 +226,7 @@ header .wrapper {
     font-size: 2.3rem;
     text-align: center;
     text-transform: capitalize;
-    font-family: "wallpoet", cursive;
+    font-family: "Wallpoet", cursive;
     margin: 0;
     -webkit-box-flex: 2;
     -ms-flex: 2 auto;
@@ -216,9 +237,12 @@ header .wrapper {
     @media (max-width: 520px) {
       header .wrapper h1 {
         font-size: 1.5rem; } }
-    @media (max-width: 355px) {
+    @media (max-width: 370px) {
       header .wrapper h1 {
         font-size: 1.3rem; } }
+    @media (max-width: 330px) {
+      header .wrapper h1 {
+        font-size: 1.1rem; } }
   header .wrapper .fa-dice {
     color: #690500;
     -webkit-animation: swing;
@@ -256,6 +280,9 @@ header .wrapper {
       header .wrapper .instructionsMenuIcon {
         -webkit-animation: none;
         animation: none; } }
+    @media (max-width: 330px) {
+      header .wrapper .instructionsMenuIcon {
+        font-size: 1.2rem; } }
     header .wrapper .instructionsMenuIcon:hover, header .wrapper .instructionsMenuIcon:focus {
       color: #690500; }
       @media (max-width: 500px) {
@@ -340,6 +367,9 @@ main .diceGrid {
   @media (max-width: 592px) {
     main .diceGrid {
       grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); } }
+  @media (max-width: 580px) {
+    main .diceGrid {
+      min-height: 400px; } }
 
 main .dice {
   border: 1px solid #070707;
@@ -350,8 +380,8 @@ main .dice {
   position: relative;
   -webkit-animation: bounceInDown;
   animation: bounceInDown;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s; }
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s; }
   @media (max-width: 990px) {
     main .dice {
       width: 100px;
@@ -554,6 +584,37 @@ main .diceFace6 .dot6 {
   -ms-transform: translate(10%, -90%);
   transform: translate(10%, -90%); }
 
+main .startDice1,
+main .startDice2,
+main .startDice3,
+main .startDice4,
+main .startDice5,
+main .startDice6 {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+
+main .startDice2 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+main .startDice3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s; }
+
+main .startDice4 {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s; }
+
+main .startDice5 {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s; }
+
+main .startDice6 {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s; }
+
 main .playButtons {
   display: -ms-grid;
   display: grid;
@@ -566,6 +627,7 @@ main .playButtons {
       grid-gap: 5%;
       grid-auto-rows: 60px;
       padding-bottom: 10px; } }
+  main .playButtons .start,
   main .playButtons .rollNewDice,
   main .playButtons .stand {
     text-transform: uppercase;
@@ -581,14 +643,18 @@ main .playButtons {
     transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in;
     transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.8s ease-in, -webkit-box-shadow 0.5s ease-in-out; }
     @media (max-width: 605px) {
+      main .playButtons .start,
       main .playButtons .rollNewDice,
       main .playButtons .stand {
         font-size: 1rem; } }
     @media (max-width: 470px) {
+      main .playButtons .start,
       main .playButtons .rollNewDice,
       main .playButtons .stand {
         font-size: 0.9rem; } }
-    main .playButtons .rollNewDice:hover, main .playButtons .rollNewDice:focus,
+    main .playButtons .start:hover, main .playButtons .start:focus,
+    main .playButtons .rollNewDice:hover,
+    main .playButtons .rollNewDice:focus,
     main .playButtons .stand:hover,
     main .playButtons .stand:focus {
       -webkit-box-shadow: 0 5px 5px #070707;
@@ -596,13 +662,27 @@ main .playButtons {
       text-shadow: 1px 1px 1px #FFFFFF;
       color: #690500; }
       @media (max-width: 500px) {
-        main .playButtons .rollNewDice:hover, main .playButtons .rollNewDice:focus,
+        main .playButtons .start:hover, main .playButtons .start:focus,
+        main .playButtons .rollNewDice:hover,
+        main .playButtons .rollNewDice:focus,
         main .playButtons .stand:hover,
         main .playButtons .stand:focus {
           color: #FFFFFF;
           -webkit-box-shadow: none;
           box-shadow: none;
           text-shadow: none; } }
+  main .playButtons .rollNewDice,
+  main .playButtons .stand {
+    display: none; }
+  main .playButtons .start {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 3;
+    grid-column: 5 / span 3; }
+    @media (max-width: 605px) {
+      main .playButtons .start {
+        -ms-grid-column: 4;
+        -ms-grid-column-span: 6;
+        grid-column: 4 / span 6; } }
   main .playButtons .rollNewDice {
     -ms-grid-column: 4;
     -ms-grid-column-span: 3;
@@ -651,6 +731,10 @@ main .playButtons {
         -ms-grid-column: 4;
         -ms-grid-column-span: 6;
         grid-column: 4 / span 6; } }
+  main .playButtons .showPlayButton {
+    display: block; }
+  main .playButtons .hideStartButton {
+    display: none; }
 
 main .userScoreIndicator {
   min-height: 80px; }

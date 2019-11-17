@@ -8,7 +8,7 @@ header {
             font-size: 2.3rem;
             text-align: center;
             text-transform: capitalize;
-            font-family:"wallpoet", cursive;
+            font-family: "Wallpoet", cursive;
             margin: 0;
             flex: 2 auto;
             @media (max-width: 605px) {
@@ -17,8 +17,11 @@ header {
             @media (max-width: 520px) {
                 font-size: 1.5rem;
             }
-            @media (max-width: 355px) {
+            @media (max-width: 370px) {
                 font-size: 1.3rem;
+            }
+            @media (max-width: 330px) {
+                font-size: 1.1rem;
             }
         }
         .fa-dice {
@@ -45,6 +48,9 @@ header {
             animation-delay: 5s;
             @media (prefers-reduced-motion: reduce) {
                 animation: none;
+            }
+            @media (max-width: 330px) {
+                font-size: 1.2rem;
             }
             &:hover,
             &:focus {

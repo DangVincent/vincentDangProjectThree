@@ -1,9 +1,10 @@
 //scripts starts here
 const myDiceApp = {};
-
+const $diceGrid = $('#diceGrid');
 const dicesRolled = [];
 let userTotalScore = 0;
 let computerTotalScore = 0;
+let roundOver = false;
 
 myDiceApp.menuEvents = function() {
     
@@ -11,18 +12,33 @@ myDiceApp.menuEvents = function() {
     const $instructionsMenu = $('#instructionsMenu');
     
     $instructionsMenuIcon.on('click', function(){
-        let $closeMenuIcon = $(this).find('.fas');
-        $closeMenuIcon.toggleClass('fas fa-bars fas fa-times');
-        $instructionsMenu.toggleClass('showInstructionsMenu');
+      
+      let $closeMenuIcon = $(this).find('.fas');
+      $closeMenuIcon.toggleClass('fas fa-bars fas fa-times');
+      $instructionsMenu.toggleClass('showInstructionsMenu');
+      const $expanded = $instructionsMenuIcon.attr('aria-expanded');
+
+        if ($expanded === 'false') {
+            $(this).attr('aria-expanded', 'true');
+        } else {
+            $(this).attr('aria-expanded', 'false');
+        }
     });
-    
 }
 
 myDiceApp.buttonEvents = function() {
 
+    const $start = $('#start');
     const $playButtons = $('#playButtons');
     const $rollNewDice = $('#rollNewDice');
-    let roundOver = false;
+    const $stand = $('#stand');
+
+    $start.on('click', function(){
+        $rollNewDice.addClass('showPlayButton');
+        $stand.addClass('showPlayButton');
+        $(this).addClass('hideStartButton');
+        $diceGrid.empty();
+    }); 
 
     $rollNewDice.on('click', function(){
         const diceRollSound = new Audio('../assets/diceRollSoundEffect.mp3');  
@@ -145,7 +161,7 @@ myDiceApp.computerScoreGenerator = function() {
 
 myDiceApp.roundResult = function() {
 
-    const userRolls = dicesRolled.join(' + ');
+    const userRolls = dicesRolled.join('+');
     const victorySound = new Audio('../assets/victorySoundEffect.mp3');
     const scores = `<p>Your dice numbers: ${userRolls}</p>
     <p>Your dice score: ${userTotalScore}</p>
@@ -156,72 +172,109 @@ myDiceApp.roundResult = function() {
     if (userTotalScore === 21) {
         victorySound.play();
         Swal.fire({
-          title: 'Blackjack, You Win!!!',
-          imageUrl: '../assets/nice.gif',
-          imageWidth: 150,
-          imageHeight: 150,
-          html: `${scores}`,
-          showClass: {
-            popup: `${showResultAnimation}`
-          },
-          hideClass: {
-            popup: `${hideResultAnimation}`
-          }
+            title: 'Blackjack, You Win!!!',
+            imageUrl: '../assets/nice.gif',
+            imageWidth: 200,
+            imageHeight: 200,
+            html: `${scores}`,
+            showClass: {
+              popup: `${showResultAnimation}`
+            },
+            hideClass: {
+              popup: `${hideResultAnimation}`
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Play again?'
+        }).then((result) => {
+            if (result.value) {
+                myDiceApp.newRound();
+            }
         });    
     }
     else if ((userTotalScore > computerTotalScore || computerTotalScore > 21) && userTotalScore < 21) {
-      Swal.fire({
-        title: 'You Win!!! :)',
-        html: `${scores}`,
-        showClass: {
-          popup: `${showResultAnimation}`
-        },
-        hideClass: {
-          popup: `${hideResultAnimation}`
-        }
-      });
+        Swal.fire({
+            title: 'You Win!!! :)',
+            html: `${scores}`,
+            showClass: {
+              popup: `${showResultAnimation}`
+            },
+            hideClass: {
+              popup: `${hideResultAnimation}`
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Play again?'
+        }).then((result) => {
+            if (result.value) {
+                myDiceApp.newRound();
+            }
+        });
     }
     else if (userTotalScore > 21) {
         Swal.fire({
-          title: 'Busted, You Lose!!!',
-          html: `${scores}`,
-          showClass: {
-            popup: `${showResultAnimation}`
-          },
-          hideClass: {
-            popup: `${hideResultAnimation}`
-          }
+            title: 'Busted, You Lose!!!',
+            html: `${scores}`,
+            showClass: {
+              popup: `${showResultAnimation}`
+            },
+            hideClass: {
+              popup: `${hideResultAnimation}`
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Play again?'
+        }).then((result) => {
+            if (result.value) {
+                myDiceApp.newRound();
+            }
         });
     }
-    else if ((userTotalScore < computerTotalScore || userTotalScore === computerTotalScore) && (computerTotalScore < 21 && userTotalScore !== 0) || computerTotalScore === 21) {
+    else if ((userTotalScore < computerTotalScore || userTotalScore === computerTotalScore) && (computerTotalScore < 21 &&userTotalScore !== 0) || computerTotalScore === 21) {
         Swal.fire({
-          title: 'Dealer Won, You Lose :(',
-          html: `${scores}`,
-          showClass: {
-            popup: `${showResultAnimation}`
-          },
-          hideClass: {
-            popup: `${hideResultAnimation}`
-          }
+            title: 'Dealer Won, You Lose :(',
+            html: `${scores}`,
+            showClass: {
+              popup: `${showResultAnimation}`
+            },
+            hideClass: {
+              popup: `${hideResultAnimation}`
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Play again?'
+        }).then((result) => {
+            if (result.value) {
+                myDiceApp.newRound();
+            }
         });
     }
     else {
         Swal.fire({
-          title: 'Did you even try? :/!',
-          html: `${scores}`,
-          showClass: {
-            popup: `${showResultAnimation}`
-          },
-          hideClass: {
-            popup: `${hideResultAnimation}`
-          }
+            title: 'Did you even try? :/!',
+            html: `${scores}`,
+            showClass: {
+              popup: `${showResultAnimation}`
+            },
+            hideClass: {
+              popup: `${hideResultAnimation}`
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Play again?'
+        }).then((result) => {
+            if (result.value) {
+                myDiceApp.newRound();
+            }
         });
     }
-
 }
 
-myDiceApp.finalScoreResult = function() {
+myDiceApp.newRound = function() {
 
+    const $userScoreIndicator = $('#userScoreIndicator');
+  
+    userTotalScore = 0;
+    computerTotalScore = 0;
+    dicesRolled.length = 0;
+    roundOver = false;
+    $diceGrid.empty();
+    $userScoreIndicator.empty();
 }
 
 myDiceApp.init = function() {

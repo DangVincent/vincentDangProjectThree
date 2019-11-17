@@ -20,9 +20,6 @@ ul li {
     max-width: 1280px;
     margin: 0 auto;
 }
-* {
-    // border: 1px solid dodgerblue;
-}
 //Sweet alert content styles starts here
 .swal2-container {
     font-family: 'Space Mono', monospace;
@@ -32,10 +29,16 @@ ul li {
         @media (max-width: 690px) {
             font-size: 1.5rem;
         }
+        @media (max-width: 465px) {
+            font-size: 1.3rem;
+        }
     }
     .swal2-popup {
         background: $tertiaryColour;
         border: 10px solid $quaternaryColour;
+        @media (max-width: 690px) {
+            padding: 10px;
+        }
     }
     .swal2-content {
         p {
@@ -45,15 +48,30 @@ ul li {
             @media (max-width: 690px) {
                 font-size: 1rem;
             }
+            @media (max-width: 470px) {
+                font-size: 0.8rem;
+            }
         }
     }
     .swal2-actions {
         margin-top: 5px;
-        .swal2-confirm {
+        button {
+            font-family: 'Wallpoet', cursive;
             background-color: $quinaryColour;
             border: 1px solid $primaryColour;
             @media (max-width: 690px) {
                 font-size: 0.9rem;
+            }
+            &:hover,
+            &:focus {
+                box-shadow: 0 5px 5px $primaryColour;
+                text-shadow: 1px 1px 1px $accentColour;
+                color: $secondaryColour;
+                @media (max-width: 500px) {
+                    color: $accentColour;
+                    box-shadow: none;
+                    text-shadow: none;
+                }
             }
         }
     }

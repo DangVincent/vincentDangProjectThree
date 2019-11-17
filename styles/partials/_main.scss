@@ -13,8 +13,10 @@ main {
         @media (max-width: 592px) {
             grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         }
+        @media (max-width: 580px) {
+            min-height: 400px;
+        }
     }
-
     .dice {
         border: 1px solid $primaryColour;
         border-radius: 10px;
@@ -23,7 +25,7 @@ main {
         height: 120px;
         position: relative;
         animation: bounceInDown;
-        animation-duration: 0.7s;
+        animation-duration: 0.3s;
         @media (max-width: 990px) {
             width: 100px;
             height: 100px;
@@ -186,6 +188,30 @@ main {
             transform: translate(10%, -90%);
         }
     }
+    .startDice1,
+    .startDice2,
+    .startDice3,
+    .startDice4,
+    .startDice5,
+    .startDice6 {
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+    .startDice2 {
+        animation-delay: 0.2s;
+    }
+    .startDice3 {
+        animation-delay: 0.4s;
+    }
+    .startDice4 {
+        animation-delay: 0.6s;
+    }
+    .startDice5 {
+        animation-delay: 0.8s;
+    }
+    .startDice6 {
+        animation-delay: 1s;
+    }
     .playButtons {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -196,6 +222,7 @@ main {
             grid-auto-rows: 60px;
             padding-bottom: 10px;
         }
+        .start, 
         .rollNewDice,
         .stand {
             text-transform: uppercase;
@@ -222,6 +249,16 @@ main {
                     box-shadow: none;
                     text-shadow: none;
                 }
+            }
+        }
+        .rollNewDice,
+        .stand {
+            display: none;
+        }
+        .start {
+            grid-column: 5 / span 3;
+            @media (max-width: 605px) {
+                grid-column: 4 / span 6;
             }
         }
         .rollNewDice {
@@ -256,6 +293,12 @@ main {
             @media (max-width: 470px) {
                 grid-column: 4 / span 6;
             }
+        }
+        .showPlayButton {
+            display: block;
+        }
+        .hideStartButton {
+            display: none;
         }
     }
     .userScoreIndicator {
