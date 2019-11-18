@@ -171,6 +171,9 @@ myDiceApp.buttonEvents = function() {
                 myDiceApp.roundResult();
             }
         }
+        else if (userMoney === 0){
+            Swal.fire(`You do not have any money left, please click the stand button to continue!`);
+        }
         else {
             Swal.fire(`You haven't place a bet yet!`);
         }
