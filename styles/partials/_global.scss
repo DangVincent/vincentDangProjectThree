@@ -46,6 +46,18 @@ ul li {
         }
     }
     .swal2-content {
+        .swal2-input {
+            color: $accentColour;
+            background: $quinaryColour;
+            border: 1px solid $primaryColour;
+        }
+        .swal2-input {
+            margin: 10px auto;
+        }
+        .swal2-validation-message {
+            background: $tertiaryColour;
+            color: $accentColour;
+        }
         p {
             text-align: left;
             margin: 5px 0;
@@ -56,6 +68,9 @@ ul li {
             @media (max-width: 470px) {
                 font-size: 0.8rem;
             }
+        }
+        .newGame {
+            text-align: center;
         }
     }
     .swal2-actions {
@@ -79,8 +94,7 @@ ul li {
                 }
             }
         }
-    }
-    
+    } 
 }
 // Sweet Alert content ends here
 // Global content styles ends here

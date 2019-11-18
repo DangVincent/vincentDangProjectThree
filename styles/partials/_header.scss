@@ -105,13 +105,17 @@ header {
             text-align: left;
             font-size: 1.1rem;
             margin-top: 0;
+            @media (max-width: 1000px) {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
             @media (max-width: 690px) {
                 font-size: 0.9rem;
             }
-            @media (max-width: 420px) {
+            @media (max-width: 520px) {
                 font-size: 0.8rem;
             }
-            @media (max-width: 330px) {
+            @media (max-width: 420px) {
                 font-size: 0.7rem;
             }
             &:first-letter {

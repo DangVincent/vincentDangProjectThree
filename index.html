@@ -25,16 +25,16 @@
                 <h2>Instructions</h2>
                 <ol class="steps">
                     <li>
-                        <p>the objective of this game is to get a count of 21 or a higher score than the dealer, without going over 21. </p>
+                        <p>the objective of this game is to get a total count of 21 or a higher score than the dealer, without going over 21. </p>
                     </li>
                     <li>
-                        <p>your score will added by a number shown on the dice between 1 to 6. </p>
+                        <p>your total score will added by the number shown on the dice between 1 to 6 and you will have $50 for your balance starting off.</p>
                     </li>
                     <li>
-                        <p>you will have two buttons to click on after the game has begun, one button will roll a new dice and the other will keep your current score.</p>
+                        <p>there are three play buttons: the roll new dice button will roll a dice after you have made a bet, the bet button will allow you to decide how much you want to wager and the stand button will keep your current score if you wish to stay where you are.</p>
                     </li>
                     <li>
-                        <p>click roll new dice button to begin.</p>
+                        <p>click the start button to begin.</p>
                     </li>
                     <li>
                         <p>have fun!!! :)</p>
@@ -272,10 +272,12 @@
                     </div>
                 </li>
             </ul>
+            <div class="userMoneyIndicator" id="userMoneyIndicator"><p>your balance: $50</p></div>
             <div class="userScoreIndicator" id="userScoreIndicator"></div>
             <form action="submit" class="playButtons" id="playButtons">
                 <button class="start" id="start" type="button">start</button>
                 <button class="rollNewDice" id="rollNewDice" type="button">roll new dice</button>
+                <button class="bet" id="bet" type="button">bet</button>
                 <input type="submit" class="stand" value="stand" id="stand">
             </form>
         </div>
