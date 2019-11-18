@@ -6,11 +6,6 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    @media (max-width: 1000px) {
-        margin: 148px 0 0;
-        padding: 0;
-        position: initial;
-    }
     p {
         text-transform: capitalize;
         margin: 0;

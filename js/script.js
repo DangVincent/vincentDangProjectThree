@@ -146,6 +146,14 @@ myDiceApp.buttonEvents = function() {
     const $playButtons = $('#playButtons');
 
     $start.on('click', function(){
+
+        const $footer = $('#footer');
+
+        $footer.css({
+            'margin': '148px 0 0',
+            'padding': '0',
+            'position': 'initial'
+        });
         $userMoneyIndicator.addClass('showUserMoneyIndicator');
         $rollNewDice.addClass('showPlayButton');
         $stand.addClass('showPlayButton');
