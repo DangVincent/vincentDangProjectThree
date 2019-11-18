@@ -328,7 +328,10 @@ myDiceApp.computerScoreGenerator = function() {
 myDiceApp.roundResult = function() {
 
     const userRolls = dicesRolled.join('+');
-    const victorySound = new Audio('assets/victorySoundEffect.mp3');
+    const blackjackSound = new Audio('assets/blackjackSoundEffect.mp3');
+    const winSound = new Audio('assets/winSoundEffect.mp3');
+    const loseSound = new Audio('aseets/loseSoundEffect.mp3');
+    const trySound = new Audio('assets/trySoundEffect.mp3');
     const scores = `<p>Your dice numbers: ${userRolls}</p>
     <p>Your dice score: ${userTotalScore}</p>
     <p>Computer dice score: ${computerTotalScore}</p>`;
@@ -336,7 +339,7 @@ myDiceApp.roundResult = function() {
     const hideResultAnimation = 'animated fadeOutUp faster';
 
     if (userTotalScore === 21) {
-        victorySound.play();
+        blackjackSound.play();
         userBet = userBet * 2;
         userMoney = userMoney + userBet;
         Swal.fire({
@@ -362,6 +365,7 @@ myDiceApp.roundResult = function() {
     else if ((userTotalScore > computerTotalScore || computerTotalScore > 21) && userTotalScore < 21) {
         userBet = userBet * 2;
         userMoney = userMoney + userBet;
+        winSound.play();
         Swal.fire({
             title: 'You Win!!! :)',
             html: `${scores} <p>You won $${userBet}!</p>`,
@@ -380,6 +384,7 @@ myDiceApp.roundResult = function() {
         });
     }
     else if (userTotalScore > 21) {
+        loseSound.play();
         Swal.fire({
             title: 'Busted, You Lose!!!',
             html: `${scores} <p>You lost $${userBet}!</p>`,
@@ -398,6 +403,7 @@ myDiceApp.roundResult = function() {
         });
     }
     else if ((userTotalScore < computerTotalScore || userTotalScore === computerTotalScore) && (computerTotalScore < 21 &&userTotalScore !== 0) || computerTotalScore === 21) {
+        loseSound.play();
         Swal.fire({
             title: 'Dealer Won, You Lose :(',
             html: `${scores} <p>You lost ${userBet}!</p>`,
@@ -416,6 +422,7 @@ myDiceApp.roundResult = function() {
         });
     }
     else {
+        trySound.play();
         Swal.fire({
             title: 'Did you even try? :/!',
             html: `${scores} <p>You lost $${userBet}!</p>`,
@@ -437,6 +444,8 @@ myDiceApp.roundResult = function() {
 
 // Clears the Board for a New Round Function
 myDiceApp.newRound = function() {
+    
+    const gameOverSound = new Audio('assets/gameOverSoundEffect.mp3');
   
     if (userMoney !== 0) {
         $userMoneyIndicator.html(`<p>current balance: $${userMoney}</p>`);
@@ -450,6 +459,7 @@ myDiceApp.newRound = function() {
         $userScoreIndicator.empty();
     }
     else {
+        gameOverSound.play();
         Swal.fire({
             icon: 'error',
             title: `You ran out of money!!!`,
