@@ -17,10 +17,10 @@ header {
             @media (max-width: 520px) {
                 font-size: 1.5rem;
             }
-            @media (max-width: 420px) {
+            @media (max-width: 450px) {
                 font-size: 1.3rem;
             }
-            @media (max-width: 370px) {
+            @media (max-width: 390px) {
                 font-size: 1.1rem;
             }
         }
@@ -49,6 +49,9 @@ header {
             animation-delay: 5s;
             @media (prefers-reduced-motion: reduce) {
                 animation: none;
+            }
+            @media(max-width: 340px) {
+                position: initial;
             }
             &:hover,
             &:focus {
