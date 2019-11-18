@@ -171,8 +171,8 @@ myDiceApp.buttonEvents = function() {
                 myDiceApp.roundResult();
             }
         }
-        else if (userMoney === 0){
-            Swal.fire(`You do not have any money left, please click the stand button to continue!`);
+        else if (userMoney === 0 || roundOver === true) {
+            Swal.fire(`Either you have no money or you have ended the round, please click the stand button to continue!`);
         }
         else {
             Swal.fire(`You haven't place a bet yet!`);
@@ -333,7 +333,7 @@ myDiceApp.roundResult = function() {
     const userRolls = dicesRolled.join('+');
     const blackjackSound = new Audio('assets/blackjackSoundEffect.mp3');
     const winSound = new Audio('assets/winSoundEffect.mp3');
-    const loseSound = new Audio('aseets/loseSoundEffect.mp3');
+    const loseSound = new Audio('assets/loseSoundEffect.mp3');
     const trySound = new Audio('assets/trySoundEffect.mp3');
     const scores = `<p>Your dice numbers: ${userRolls}</p>
     <p>Your dice score: ${userTotalScore}</p>
@@ -462,6 +462,8 @@ myDiceApp.newRound = function() {
         $userScoreIndicator.empty();
     }
     else {
+        gameOverSound.pause();
+        gameOverSound.currentTime = 0;
         gameOverSound.play();
         Swal.fire({
             icon: 'error',
