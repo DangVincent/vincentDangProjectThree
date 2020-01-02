@@ -27,7 +27,7 @@ ul li {
     font-family: 'Space Mono', monospace;
     .swal2-title {
         margin-bottom: 5px;
-        color: $accentColour;
+        color: $primaryColour;
         @media (max-width: 690px) {
             font-size: 1.5rem;
         }
@@ -79,14 +79,14 @@ ul li {
             font-family: 'Wallpoet', cursive;
             background-color: $quinaryColour;
             border: 1px solid $primaryColour;
+            transition: box-shadow 0.5s ease-in-out;
             @media (max-width: 690px) {
                 font-size: 0.9rem;
             }
             &:hover,
             &:focus {
                 box-shadow: 0 5px 5px $primaryColour;
-                text-shadow: 1px 1px 1px $accentColour;
-                color: $secondaryColour;
+                color: $accentColour;
                 @media (max-width: 500px) {
                     color: $accentColour;
                     box-shadow: none;

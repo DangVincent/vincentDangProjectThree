@@ -393,7 +393,7 @@ main {
             border: 1px solid $primaryColour;
             font-size: 1.2rem;
             font-family: 'Wallpoet', cursive;
-            transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
+            transition: box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
             @media (max-width: 605px) {
                 font-size: 1rem;
             }
@@ -404,7 +404,6 @@ main {
             &:focus {
                 box-shadow: 0 5px 5px $primaryColour;
                 text-shadow: 2px 2px 1px $primaryColour;
-                color: $secondaryColour;
                 @media (max-width: 500px) {
                     color: $accentColour;
                     box-shadow: none;

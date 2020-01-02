@@ -149,7 +149,7 @@ html {
   font-size: 125%; }
 
 body {
-  background: #447020; }
+  background: #65A72F; }
 
 ol,
 ul {
@@ -172,7 +172,7 @@ ul li {
   font-family: 'Space Mono', monospace; }
   .swal2-container .swal2-title {
     margin-bottom: 5px;
-    color: #FFFFFF; }
+    color: #070707; }
     @media (max-width: 690px) {
       .swal2-container .swal2-title {
         font-size: 1.5rem; } }
@@ -180,8 +180,8 @@ ul li {
       .swal2-container .swal2-title {
         font-size: 1.3rem; } }
   .swal2-container .swal2-popup {
-    background: #447020;
-    border: 10px solid #49270c; }
+    background: #65A72F;
+    border: 10px solid #49270C; }
     @media (max-width: 690px) {
       .swal2-container .swal2-popup {
         padding: 10px; } }
@@ -194,7 +194,7 @@ ul li {
   .swal2-container .swal2-content .swal2-input {
     margin: 10px auto; }
   .swal2-container .swal2-content .swal2-validation-message {
-    background: #447020;
+    background: #65A72F;
     color: #FFFFFF; }
   .swal2-container .swal2-content p {
     text-align: left;
@@ -213,15 +213,19 @@ ul li {
     .swal2-container .swal2-actions button {
       font-family: 'Wallpoet', cursive;
       background-color: #171A21;
-      border: 1px solid #070707; }
+      border: 1px solid #070707;
+      -webkit-transition: -webkit-box-shadow 0.5s ease-in-out;
+      transition: -webkit-box-shadow 0.5s ease-in-out;
+      -o-transition: box-shadow 0.5s ease-in-out;
+      transition: box-shadow 0.5s ease-in-out;
+      transition: box-shadow 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out; }
       @media (max-width: 690px) {
         .swal2-container .swal2-actions button {
           font-size: 0.9rem; } }
       .swal2-container .swal2-actions button:hover, .swal2-container .swal2-actions button:focus {
         -webkit-box-shadow: 0 5px 5px #070707;
         box-shadow: 0 5px 5px #070707;
-        text-shadow: 1px 1px 1px #FFFFFF;
-        color: #690500; }
+        color: #FFFFFF; }
         @media (max-width: 500px) {
           .swal2-container .swal2-actions button:hover, .swal2-container .swal2-actions button:focus {
             color: #FFFFFF;
@@ -939,11 +943,11 @@ main .playButtons {
     border: 1px solid #070707;
     font-size: 1.2rem;
     font-family: 'Wallpoet', cursive;
-    -webkit-transition: color 0.3s ease-out, text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out;
-    transition: color 0.3s ease-out, text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out;
-    -o-transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
-    transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
-    transition: color 0.3s ease-out, box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out; }
+    -webkit-transition: text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out;
+    transition: text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out;
+    -o-transition: box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
+    transition: box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in;
+    transition: box-shadow 0.5s ease-in-out, text-shadow 0.5s ease-in, -webkit-box-shadow 0.5s ease-in-out; }
     @media (max-width: 605px) {
       main .playButtons .start,
       main .playButtons .rollNewDice,
@@ -965,8 +969,7 @@ main .playButtons {
     main .playButtons .bet:focus {
       -webkit-box-shadow: 0 5px 5px #070707;
       box-shadow: 0 5px 5px #070707;
-      text-shadow: 2px 2px 1px #070707;
-      color: #690500; }
+      text-shadow: 2px 2px 1px #070707; }
       @media (max-width: 500px) {
         main .playButtons .start:hover, main .playButtons .start:focus,
         main .playButtons .rollNewDice:hover,
@@ -1092,7 +1095,7 @@ main .showUserMoneyIndicator {
 
 footer {
   border-top: 2px solid #070707;
-  background: #49270c;
+  background: #49270C;
   position: absolute;
   bottom: 0;
   left: 0;
