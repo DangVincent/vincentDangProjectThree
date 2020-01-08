@@ -12,7 +12,8 @@ Want to gamble some money? This is a fun and addicting blackjack game that uses 
 * jQuery
 * VSCode
 * Sound Effects - Used to add sound effects to event handlers
+* [Sweet Alerts 2](https://cdn.jsdelivr.net/npm/sweetalert2@9) - Used to animate alerts for users when an event occurs
+* [Animate.css](https://github.com/daneden/animate.css) - A cross-browser library of CSS animations created by Dan Eden
 * [Prepros](https://prepros.io/) - Sass compiler
-* [AOS](https://michalsnik.github.io/aos/) - Used animations on scroll
 ## Authors
 * **Vincent Dang** - [DangVincent](https://github.com/DangVincent)
