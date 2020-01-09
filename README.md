@@ -1,7 +1,7 @@
 # Welcome to Dice Blackjack
 [Live Demo](https://dangvincent.github.io/vincentDangProjectThree/)
 
-![Dice Blackjack App](https://i.imgur.com/AVz8qS8.jpg)
+![Dice Blackjack App](https://i.imgur.com/yvuf63J.jpg)
 ## Description
 Want to gamble some money? This is a fun and addicting blackjack game that uses dices instead of a regular deck of cards. For a better experience, there are sound effects included.
 ## Built With
