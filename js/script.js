@@ -118,6 +118,11 @@ myDiceApp.startScreenDices = function() {
 // Controls the Instructions Menu Button Function
 myDiceApp.menuEvents = function() {
     
+    // Gets the date year
+    const $year = $('#year');
+    const date = new Date().getFullYear();
+    $year.text(date);
+
     const $instructionsMenuIcon = $('#instructionsMenuIcon');
     const $instructionsMenu = $('#instructionsMenu');
     
